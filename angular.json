@@ -25,7 +25,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/cubism/Core/minified.js",
+              "src/assets/cubism/Core/live2dcubismcore.js"
+            ]
           },
           "configurations": {
             "production": {
