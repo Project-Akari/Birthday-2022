@@ -54,6 +54,7 @@ export class LAppDelegate {
    */
   public initialize(): boolean {
     // キャンバスの作成
+    var l2dDiv : HTMLCanvasElement = document.getElementById('l2d-canvas');
     canvas = document.createElement('canvas');
     if (LAppDefine.CanvasSize === 'auto') {
       this._resizeCanvas();
@@ -70,7 +71,7 @@ export class LAppDelegate {
       alert('Cannot initialize WebGL. This browser does not support.');
       gl = null;
 
-      document.body.innerHTML =
+      l2dDiv.innerHTML =
         'This browser does not support the <code>&lt;canvas&gt;</code> element.';
 
       // gl初期化失敗
@@ -78,7 +79,7 @@ export class LAppDelegate {
     }
 
     // キャンバスを DOM に追加
-    document.body.appendChild(canvas);
+    l2dDiv.appendChild(canvas);
 
     if (!frameBuffer) {
       frameBuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
@@ -294,7 +295,7 @@ export class LAppDelegate {
    */
   private _resizeCanvas(): void {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight - 3.001;
   }
 
   _cubismOption: Option; // Cubism SDK Option
