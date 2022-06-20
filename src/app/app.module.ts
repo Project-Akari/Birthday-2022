@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { GreetingsComponent } from './greetings/greetings.component';
+import { DialogBoxComponent } from './greetings/dialog-box/dialog-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingScreenComponent,
-    GreetingsComponent
+    GreetingsComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,

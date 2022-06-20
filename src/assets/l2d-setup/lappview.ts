@@ -24,6 +24,7 @@ export class LAppView {
   /**
    * コンストラクタ
    */
+  private _eventCallback: LAppDefine.L2EventFunction
   constructor() {
     this._programId = null;
     this._back = null;
@@ -37,6 +38,10 @@ export class LAppView {
 
     // 画面の表示の拡大縮小や移動の変換を行う行列
     this._viewMatrix = new CubismViewMatrix();
+  }
+
+  public setEventCallback(eventCallback: LAppDefine.L2EventFunction): void {
+    this._eventCallback = eventCallback;
   }
 
   /**
@@ -111,9 +116,7 @@ export class LAppView {
     gl.flush();
 
     const live2DManager: LAppLive2DManager = LAppLive2DManager.getInstance();
-
     live2DManager.setViewMatrix(this._viewMatrix);
-
     live2DManager.onUpdate();
   }
 
@@ -222,9 +225,9 @@ export class LAppView {
       live2DManager.onTap(x, y);
 
       // 歯車にタップしたか
-      if (this._gear.isHit(pointX, pointY)) {
-        live2DManager.nextScene();
-      }
+      // if (this._gear.isHit(pointX, pointY)) {
+      //   live2DManager.nextScene();
+      // }
     }
   }
 

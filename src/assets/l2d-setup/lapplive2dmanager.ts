@@ -21,15 +21,16 @@ export let s_instance: LAppLive2DManager = null;
  * モデル生成と破棄、タップイベントの処理、モデル切り替えを行う。
  */
 export class LAppLive2DManager {
+  private _eventCallback: LAppDefine.L2EventFunction
   /**
    * クラスのインスタンス（シングルトン）を返す。
    * インスタンスが生成されていない場合は内部でインスタンスを生成する。
    *
    * @return クラスのインスタンス
    */
-  public static getInstance(): LAppLive2DManager {
+  public static getInstance(eventCallback: LAppDefine.L2EventFunction): LAppLive2DManager {
     if (s_instance == null) {
-      s_instance = new LAppLive2DManager();
+      s_instance = new LAppLive2DManager(eventCallback);
     }
 
     return s_instance;
@@ -162,6 +163,7 @@ export class LAppLive2DManager {
 
       model.update();
       model.draw(projection); // 参照渡しなのでprojectionは変質する。
+
     }
   }
 
@@ -198,7 +200,7 @@ export class LAppLive2DManager {
     modelJsonName2 += '.model3.json';
 
     this.releaseAllModel();
-    this._models.pushBack(new LAppModel());
+    this._models.pushBack(new LAppModel(this._eventCallback));
     // this._models.pushBack(new LAppModel());
     this._models.at(0).loadAssets(modelPath, modelJsonName);
     // this._models.at(1).loadAssets(modelPath2, modelJsonName2);
@@ -213,7 +215,8 @@ export class LAppLive2DManager {
   /**
    * コンストラクタ
    */
-  constructor() {
+  constructor(eventCallback: LAppDefine.L2EventFunction) {
+    this._eventCallback = eventCallback;
     this._viewMatrix = new CubismMatrix44();
     this._models = new csmVector<LAppModel>();
     this._sceneIndex = 0;

@@ -72,6 +72,7 @@ enum LoadStep {
  * モデル生成、機能コンポーネント生成、更新処理とレンダリングの呼び出しを行う。
  */
 export class LAppModel extends CubismUserModel {
+  private _eventCallback: LAppDefine.L2EventFunction
   /**
    * model3.jsonが置かれたディレクトリとファイルパスからモデルを生成する
    * @param dir
@@ -408,6 +409,7 @@ export class LAppModel extends CubismUserModel {
 
           if (this._textureCount >= textureCount) {
             // ロード完了
+            this._eventCallback(LAppDefine.L2dEvents.ModelLoaded);
             this._state = LoadStep.CompleteSetup;
           }
         };
@@ -436,7 +438,6 @@ export class LAppModel extends CubismUserModel {
    * 更新
    */
   public update(): void {
-
     let motionUpdated = false;
     const deltaTimeSeconds: number = LAppPal.getDeltaTime();
     this._userTimeSeconds += deltaTimeSeconds;
@@ -456,10 +457,17 @@ export class LAppModel extends CubismUserModel {
         // モーションの再生がない場合、待機モーションの中からランダムで再生する
         this.startRandomMotion(
           // LAppDefine.MotionGroupIdle,
-          'w-adult-blushed01',
+          'w-cool-blushed01',
           LAppDefine.PriorityIdle,
           () => {
-            this._isMotionCompleted = true;
+            this.startRandomMotion(
+              'face_smile_01',
+              LAppDefine.PriorityForce,
+              () => {
+                this._eventCallback(LAppDefine.L2dEvents.MotionCompleted);
+                this._isMotionCompleted = true;
+              }
+            )
           }
         );
       } else {
@@ -518,11 +526,11 @@ export class LAppModel extends CubismUserModel {
 
     // ドラッグによる変化
     // ドラッグによる顔の向きの調整
-    // this._model.addParameterValueById(this._idParamAngleX, this._dragX * 30); // -30から30の値を加える
-    // this._model.addParameterValueById(this._idParamAngleY, this._dragY * 30);
+    // this._model.addParameterValueById(this._idParamAngleX, this._dragX * 10); // -30から30の値を加える
+    // this._model.addParameterValueById(this._idParamAngleY, this._dragY * 10);
     // this._model.addParameterValueById(
     //   this._idParamAngleZ,
-    //   this._dragX * this._dragY * -30
+    //   this._dragX * this._dragY * -10
     // );
 
     // // ドラッグによる体の向きの調整
@@ -828,9 +836,9 @@ export class LAppModel extends CubismUserModel {
   /**
    * コンストラクタ
    */
-  public constructor() {
+  public constructor(eventCallback: LAppDefine.L2EventFunction) {
     super();
-
+    this._eventCallback = eventCallback;
     this._isMotionCompleted = false;
     this._modelSetting = null;
     this._modelHomeDir = null;

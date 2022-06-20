@@ -15,6 +15,13 @@ import { LogLevel } from '@framework/live2dcubismframework';
 // Canvas width and height pixel values, or dynamic screen size ('auto').
 export const CanvasSize: { width: number; height: number } | 'auto' = 'auto';
 
+export enum L2dEvents {
+  ModelLoaded,
+  MotionCompleted
+}
+
+export type L2EventFunction = (event: L2dEvents) => void
+
 // 画面
 export const ViewScale = 1.0;
 export const ViewMaxScale = 2.0;

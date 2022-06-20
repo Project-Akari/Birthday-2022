@@ -24,6 +24,7 @@ export let frameBuffer: WebGLFramebuffer = null;
  * Cubism SDKの管理を行う。
  */
 export class LAppDelegate {
+  private _eventCallback: Function;
   /**
    * クラスのインスタンス（シングルトン）を返す。
    * インスタンスが生成されていない場合は内部でインスタンスを生成する。
@@ -49,6 +50,11 @@ export class LAppDelegate {
     s_instance = null;
   }
 
+  public eventListener(callback: LAppDefine.L2EventFunction): void {
+    this._eventCallback = callback;
+    this._view.setEventCallback(callback);
+  }
+
   /**
    * APPに必要な物を初期化する。
    */
@@ -56,6 +62,7 @@ export class LAppDelegate {
     // キャンバスの作成
     var l2dDiv : HTMLCanvasElement = document.getElementById('l2d-canvas');
     canvas = document.createElement('canvas');
+    canvas.style.marginTop = '5px';
     if (LAppDefine.CanvasSize === 'auto') {
       this._resizeCanvas();
     } else {
@@ -283,8 +290,7 @@ export class LAppDelegate {
     CubismFramework.initialize();
 
     // load model
-    LAppLive2DManager.getInstance();
-
+    LAppLive2DManager.getInstance(this._eventCallback);
     LAppPal.updateTime();
 
     this._view.initializeSprite();

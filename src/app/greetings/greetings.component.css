@@ -1,0 +1,21 @@
+.background {
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 100vh;
+ width: 100%;
+ z-index: 0;
+}
+
+#l2d-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+
+#l2d-canvas canvas {
+  margin-top: 20px;;
+}
