@@ -2,16 +2,12 @@
   <div class="dialog-title">
     <div class="dialog-title-box"></div>
     <div class="dialog-title-content">
-      Ena
+      {{dialog.characterName}}
     </div>
   </div>
-  <div class="dialog-body">
+  <div (click)="changeDialog()" class="dialog-body">
     <div class="dialog-body-content">
-      Are you enjoying your day so far?
-      Know this, superstar
-      A wonderful day still awaits you
-      Right now is a grand moment for you
-      I wish you a great day and happy birthday - Arya
+      {{dialog.currentDialog}}
     </div>
   </div>
 </div>

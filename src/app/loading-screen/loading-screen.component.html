@@ -1,17 +1,5 @@
-<div id="portCafeLogo" *ngIf="portCafe" class="center-content max-height fade-in">
-  <img src="assets/logo/port_cafe.png" class="port-cafe-logo" alt="">
-</div>
-<div id="projectAkariLogo" *ngIf="projectAkari" class="center-content max-height fade-in">
-  <img src="assets/logo/project_akari.png" class="project-akari-logo" alt="">
-</div>
-<div id="loginPage" (click)="navigateGreetings()" *ngIf="loginPage" class="max-height fade-in">
-  <img src="assets/logo/project_akari.png" class="project-akari-img" alt="">
-  <audio [autoplay]="true" loop>
-    <source src="assets/sound/bgm/LoginBGM.mp3" type="audio/mpeg" />
-    This content is displayed by browsers that don't recognize the audio element
-  </audio>
-  <video class="login-video" [muted]="true" autoplay playsinline loop>
-    <source src="assets/videos/login_video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<div class="loading-screen-bg">
+ <div class="loading-screen-loading">
+  Now Loading...
+ </div>
 </div>

@@ -455,21 +455,21 @@ export class LAppModel extends CubismUserModel {
       this._model.loadParameters(); // 前回セーブされた状態をロード
       if (this._motionManager.isFinished()) {
         // モーションの再生がない場合、待機モーションの中からランダムで再生する
-        this.startRandomMotion(
-          // LAppDefine.MotionGroupIdle,
-          'w-cool-blushed01',
-          LAppDefine.PriorityIdle,
-          () => {
-            this.startRandomMotion(
-              'face_smile_01',
-              LAppDefine.PriorityForce,
-              () => {
-                this._eventCallback(LAppDefine.L2dEvents.MotionCompleted);
-                this._isMotionCompleted = true;
-              }
-            )
-          }
-        );
+        // this.startRandomMotion(
+        //   // LAppDefine.MotionGroupIdle,
+        //   'w-cool-blushed01',
+        //   LAppDefine.PriorityIdle,
+        //   () => {
+        //     this.startRandomMotion(
+        //       'face_smile_01',
+        //       LAppDefine.PriorityForce,
+        //       () => {
+        //         this._eventCallback(LAppDefine.L2dEvents.MotionCompleted);
+        //         this._isMotionCompleted = true;
+        //       }
+        //     )
+        //   }
+        // );
       } else {
         motionUpdated = this._motionManager.updateMotion(
           this._model,
@@ -716,12 +716,12 @@ export class LAppModel extends CubismUserModel {
 
     const count: number = this._modelSetting.getHitAreasCount();
 
-    for (let i = 0; i < count; i++) {
-      if (this._modelSetting.getHitAreaName(i) == hitArenaName) {
-        const drawId: CubismIdHandle = this._modelSetting.getHitAreaId(i);
-        return this.isHit(drawId, x, y);
-      }
-    }
+    // for (let i = 0; i < count; i++) {
+    //   if (this._modelSetting.getHitAreaName(i) == hitArenaName) {
+    //     const drawId: CubismIdHandle = this._modelSetting.getHitAreaId(i);
+    //     return this.isHit(drawId, x, y);
+    //   }
+    // }
 
     return false;
   }

@@ -39,6 +39,19 @@ export class LAppDelegate {
     return s_instance;
   }
 
+  public changeMotion(motion: string, priority?: number, onCompleted?: Function): void {
+    const appManager = LAppLive2DManager.getInstance();
+    const model = appManager.getModel(0);
+    model.startRandomMotion(
+      motion, //'w-cool-blushed01','face_smile_01',
+      priority ?? LAppDefine.PriorityIdle,
+      () => {
+        if (onCompleted) onCompleted();
+        this._eventCallback(LAppDefine.L2dEvents.MotionCompleted);
+      }
+    )
+  }
+
   /**
    * クラスのインスタンス（シングルトン）を解放する。
    */
