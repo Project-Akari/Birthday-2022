@@ -216,19 +216,25 @@ export class LAppLive2DManager {
     // ディレクトリ名とmodel3.jsonの名前を一致させておくこと。
     // this.releaseAllModel();
 
-    for (let index = 0; index < LAppDefine.ModelDir.length; index++) {
+    for (let index = 0; index < 3; index++) {
       if (LAppDefine.DebugLogEnable) {
         LAppPal.printMessage(`[APP]model load: ${index}`);
       }
 
-      const model: string = LAppDefine.ModelDir[index];
-      const modelPath: string = LAppDefine.ResourcesPath + model + '/';
-      let modelJsonName: string = LAppDefine.ModelDir[index];
-      modelJsonName += '.model3.json';
-
-      this._models.pushBack(new LAppModel(this._eventCallback, index < 3));
-      this._models.at(index).loadAssets(modelPath, modelJsonName);
+      this.loadModel(LAppDefine.ModelDir[index], index);
     }
+  }
+
+  public loadModel(folderName: string, index: number): void {
+    // this.releaseAllModel();
+
+    const model: string = folderName;
+    const modelPath: string = LAppDefine.ResourcesPath + model + '/';
+    let modelJsonName: string = folderName;
+    modelJsonName += '.model3.json';
+
+    this._models.pushBack(new LAppModel(this._eventCallback, true));
+    this._models.at(this._models.getSize() - 1).loadAssets(modelPath, modelJsonName);
   }
 
   public setViewMatrix(m: CubismMatrix44) {

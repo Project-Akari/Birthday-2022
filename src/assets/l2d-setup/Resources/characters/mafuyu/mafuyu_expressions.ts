@@ -5,4 +5,5 @@ export class MafuyuExpressions {
   public smile4: string = 'face_smile_04';
   public smile5: string = 'face_smile_05';
   public darkSmile2: string = 'face_darksmile_02';
+  public shy2: string = 'face_shy_02';
 }

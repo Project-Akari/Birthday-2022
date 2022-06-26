@@ -22,17 +22,19 @@ export class GreetingsComponent implements OnInit, OnDestroy {
       this.greeting = Greetings.getGreeting(params.greetedby);
     });
 
+    let modelLoadedCount = 0;
     const lAppDelegate = LAppDelegate.getInstance();
     lAppDelegate.eventListener((event: L2dDefine.L2dEvents) => {
       switch (event) {
         case L2dDefine.L2dEvents.ModelLoaded:
-          // lAppDelegate.changeMotion('face_smile_01');
-          // lAppDelegate.changeMotion('w-adult-glad01', L2dDefine.PriorityForce);
+          if (modelLoadedCount == 0) {
+            setTimeout(() => {
+              this.isModelLoaded = true;
+              this.showDialogBox = true;
+            }, 200);
+          }
+          ++modelLoadedCount;
           console.log('Model Loaded');
-          setTimeout(() => {
-            this.isModelLoaded = true;
-            this.showDialogBox = true;
-          }, 200);
           break;
           case L2dDefine.L2dEvents.MotionCompleted:
             console.log('Motion Completed');

@@ -77,7 +77,7 @@ export class IntroGreeting implements IGreetings {
     this.dialogs.push(new DialogModel({
       page: 4,
       characterName: MafuyuModel.characterName,
-      dialog: `By the way, Honami told me the other day that she's was about to cry when she didn't get my card. Fufu`,
+      dialog: `By the way, Honami told me the other day that she was about to cry when she didn't get my card. Fufu`,
       modelMotion: [
         new ModelMotion({
           character: EnaModel.character,
@@ -114,6 +114,46 @@ export class IntroGreeting implements IGreetings {
           triggeredText: 'pull'
         }),
       ]
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 6,
+      characterName: LukaModel.characterName,
+      dialog: `Oh. Everyone is here!`,
+      modelMotion: [
+        new ModelMotion({
+          character: EnaModel.character,
+          motion: EnaModel.motions.coolShakehand1,
+          expression: EnaModel.expressions.smile1
+        }),
+        new ModelMotion({
+          character: LukaModel.character,
+          motion: LukaModel.motions.happyShakehand1,
+          expression: LukaModel.expressions.sparkling
+        }),
+        new ModelMotion({
+          character: MafuyuModel.character,
+          motion: MafuyuModel.motions.cuteShakehand1,
+          expression: MafuyuModel.expressions.shy2
+        }),
+      ]
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 7,
+      characterName: "Everyone",
+      dialog: `Happy Birthday Akari!!`,
+      changeModels: [3, 4, 5]
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 8,
+      characterName: "Everyone",
+      dialog: `Happy Birthday Akari!!`,
+      changeModels: [6, 7, 8]
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 9,
+      characterName: "Kaito",
+      dialog: `Happy Birthday Akari!!`,
+      changeModels: [9]
     }));
   }
 }

@@ -1,10 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DialogModel } from './models/dialog';
 import { LAppDelegate } from '@l2d-setup/lappdelegate';
-import { ModelMotion } from './models/model_motion';
-import { EnaModel } from '@l2d-setup/Resources/characters/ena/ena_model';
-import { LukaModel } from '@l2d-setup/Resources/characters/luka/luka_model';
-import { MafuyuModel } from '@l2d-setup/Resources/characters/mafuyu/mafuyu_model';
 import { IGreetings } from '../greetings-dialog/greetings';
 
 @Component({
@@ -32,6 +28,7 @@ export class DialogBoxComponent implements OnInit, OnChanges {
   }
 
   startDialog(): void {
+    if (this._isDialogCompleted) this._isDialogCompleted = false;
     this.dialog.runMotion();
     for (let index = 0; index < this.dialog.length; index++) {
       this._timeouts.push(setTimeout(() => {
@@ -60,7 +57,8 @@ export class DialogBoxComponent implements OnInit, OnChanges {
     }
     else {
       this.dialog = this.greeting.getDialog(this._page++);
-      this.startDialog();
+      this.dialog.updateModels();
+      if (this.dialog) this.startDialog();
     }
   }
 }

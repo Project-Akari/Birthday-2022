@@ -3,4 +3,5 @@ export class LukaMotions {
   public adultNod3: string = 'w-adult-nod03';
   public adultTilthead2: string = 'w-adult-tilthead02';
   public happyForward1: string = 'w-happy-forward01';
+  public happyShakehand1: string = 'w-happy-shakehand01';
 }

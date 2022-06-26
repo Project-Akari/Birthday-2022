@@ -35,7 +35,6 @@ export class LAppDelegate {
     if (s_instance == null) {
       s_instance = new LAppDelegate();
     }
-
     return s_instance;
   }
 
@@ -51,6 +50,17 @@ export class LAppDelegate {
       }
     )
   }
+
+  public loadModel(index: number): void {
+    const appManager = LAppLive2DManager.getInstance();
+    appManager.loadModel(LAppDefine.ModelDir[index], index);
+  }
+
+  public releaseModels(): void {
+    const appManager = LAppLive2DManager.getInstance();
+    appManager.releaseAllModel();
+  }
+
 
   /**
    * クラスのインスタンス（シングルトン）を解放する。
