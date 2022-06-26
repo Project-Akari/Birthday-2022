@@ -21,9 +21,9 @@ export class LandingPageComponent implements AfterViewInit {
 
   }
 
-  navigateGreetings(): void {
-    this.router.navigate(['/greetings']);
-  }
+  // navigateGreetings(): void {
+  //   this.router.navigate(['/greetings']);
+  // }
 
   private _initLogos(): void {
     const logos = [

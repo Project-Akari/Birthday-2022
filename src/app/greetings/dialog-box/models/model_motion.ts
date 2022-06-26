@@ -1,18 +1,47 @@
 import { LAppDelegate } from '@l2d-setup/lappdelegate';
 import * as L2dDefine from '@l2d-setup/lappdefine';
+import { PuroSekaiChar } from '@l2d-setup/lappdefine';
+
+interface ModelMotionArgs {
+  character: PuroSekaiChar,
+  motion: string,
+  expression: string,
+  triggeredText?: string
+}
 
 export class ModelMotion {
-  public _motion: string;
-  public _expression: string;
+  private _character: PuroSekaiChar
+  private _motion: string;
+  private _expression: string;
+  private _triggeredText: string;
+  private _l2dDelegate: LAppDelegate;
 
-  constructor({motion, expression}: {motion: string, expression: string}) {
-    this._motion = motion;
-    this._expression = expression;
+  public get hasTriggeredText() : boolean {
+    return this._triggeredText != null;
   }
 
-  public run(): void {
-    const l2dDelegate = LAppDelegate.getInstance();
-    l2dDelegate.changeMotion(this._expression, L2dDefine.PriorityForce);
-    l2dDelegate.changeMotion(this._motion, L2dDefine.PriorityForce);
+  public get triggeredText() : string {
+    return this._triggeredText;
+  }
+
+
+  constructor({character, motion, expression, triggeredText}: ModelMotionArgs) {
+    this._character = character;
+    this._motion = motion;
+    this._expression = expression;
+    this._triggeredText = triggeredText;
+    this._l2dDelegate = LAppDelegate.getInstance();
+  }
+
+  public run(currentDialog?: string): void {
+    if (this.hasTriggeredText && currentDialog) {
+      if (currentDialog.includes(this._triggeredText)) this._runMotion()
+    }
+    else this._runMotion();
+  }
+
+  private _runMotion(): void {
+    this._l2dDelegate.changeMotion(this._expression, this._character, L2dDefine.PriorityForce);
+    this._l2dDelegate.changeMotion(this._motion, this._character, L2dDefine.PriorityForce);
   }
 }

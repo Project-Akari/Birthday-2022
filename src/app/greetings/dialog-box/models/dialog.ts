@@ -11,6 +11,7 @@ export class DialogModel {
   private _page: number;
   private _dialogArray: string[];
   private _dialogString: string;
+  private _isMotionRunning: boolean = false;
 
   public get length() : number {
     return this._dialogArray.length;
@@ -24,6 +25,11 @@ export class DialogModel {
     return this._page;
   }
 
+  public get motionLength() : number {
+    return this._motion.length;
+  }
+
+
 
   constructor({page, characterName, dialog, modelMotion}: DialogModelParam ) {
     this._page = page;
@@ -33,13 +39,29 @@ export class DialogModel {
     this._motion = modelMotion;
   }
 
-  getDialogChar(index: number): string {
+  public getDialogChar(index: number): string {
     return this._dialogArray[index];
   }
 
-  runModelMotion(): void {
+  public runMotion(index?: number): void {
     if (this._motion.length && this._motion.length > 0) {
-      this._motion[0].run();
+      if (index) this._motion[index].run();
+      else {
+        const initMotions = this._motion.filter(f => !f.hasTriggeredText);
+        initMotions.forEach(f => f.run());
+      }
+    }
+  }
+
+  public dialogOnChange(): void {
+    if (this._motion.filter(f => f.hasTriggeredText).length > 0) {
+      const motions = this._motion.filter(f => this.currentDialog.includes(f.triggeredText));
+      if (motions.length > 0) {
+        if (!this._isMotionRunning) {
+          this._isMotionRunning = true;
+          motions[0].run();
+        }
+      }
     }
   }
 }

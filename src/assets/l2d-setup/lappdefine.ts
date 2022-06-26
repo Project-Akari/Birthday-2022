@@ -53,7 +53,12 @@ export const PowerImageName = 'CloseNormal.png';
 // モデル定義---------------------------------------------
 // モデルを配置したディレクトリ名の配列
 // ディレクトリ名とmodel3.jsonの名前を一致させておくこと
-export const ModelDir: string[] = ['19ena', 'Haru', 'Hiyori', 'Mark', 'Natori', 'Rice'];
+export enum PuroSekaiChar {
+  Ena,
+  Luka,
+  Mafuyu
+}
+export const ModelDir: string[] = ['19ena', '24luka', '18mafuyu'];
 export const ModelDirSize: number = ModelDir.length;
 
 // 外部定義ファイル（json）と合わせる

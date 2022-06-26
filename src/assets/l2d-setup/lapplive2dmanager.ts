@@ -134,7 +134,7 @@ export class LAppLive2DManager {
   public onUpdate(): void {
     const { width, height } = canvas;
 
-    const modelCount: number = this._models.getSize();
+    const modelCount: number = this._models.get().filter(f => f.isModelShown).length;
 
     for (let i = 0; i < modelCount; ++i) {
       const projection: CubismMatrix44 = new CubismMatrix44();
@@ -149,10 +149,17 @@ export class LAppLive2DManager {
           projection.scale(height / width, 1.0);
         }
 
-        if (i == 0) {
-          model.getModelMatrix().setWidth(2.05);
-          projection.translate(-0.30, -0.15);
-          projection.translateRelative(-0.30, -0.15);
+        model.getModelMatrix().setWidth(2.05);
+        projection.translate(0, -0.15);
+        projection.translateRelative(0, -0.15);
+
+        if (modelCount == 2) {
+          projection.translate(i == 0 ? -0.15 : 0.15, -0.15);
+          projection.translateRelative(i == 0 ? -0.15 : 0.15, -0.15);
+        }
+        else if (modelCount > 2) {
+          projection.translate(-0.30 + (0.30 * i), -0.15);
+          projection.translateRelative(-0.30 + (0.30 * i), -0.15);
         }
 
         // 必要があればここで乗算
@@ -189,21 +196,39 @@ export class LAppLive2DManager {
     // ModelDir[]に保持したディレクトリ名から
     // model3.jsonのパスを決定する。
     // ディレクトリ名とmodel3.jsonの名前を一致させておくこと。
-    const model: string = LAppDefine.ModelDir[index];
-    const modelPath: string = LAppDefine.ResourcesPath + model + '/';
-    let modelJsonName: string = LAppDefine.ModelDir[index];
-    modelJsonName += '.model3.json';
+    // this.releaseAllModel();
 
-    const model2: string = LAppDefine.ModelDir[1];
-    const modelPath2: string = LAppDefine.ResourcesPath + model2 + '/';
-    let modelJsonName2: string = LAppDefine.ModelDir[1];
-    modelJsonName2 += '.model3.json';
+    for (let index = 0; index < LAppDefine.ModelDir.length; index++) {
+      const model: string = LAppDefine.ModelDir[index];
+      const modelPath: string = LAppDefine.ResourcesPath + model + '/';
+      let modelJsonName: string = LAppDefine.ModelDir[index];
+      modelJsonName += '.model3.json';
 
-    this.releaseAllModel();
-    this._models.pushBack(new LAppModel(this._eventCallback));
-    // this._models.pushBack(new LAppModel());
-    this._models.at(0).loadAssets(modelPath, modelJsonName);
-    // this._models.at(1).loadAssets(modelPath2, modelJsonName2);
+      this._models.pushBack(new LAppModel(this._eventCallback, true));
+      this._models.at(index).loadAssets(modelPath, modelJsonName);
+    }
+  }
+
+  public loadModels(): void {
+
+    // ModelDir[]に保持したディレクトリ名から
+    // model3.jsonのパスを決定する。
+    // ディレクトリ名とmodel3.jsonの名前を一致させておくこと。
+    // this.releaseAllModel();
+
+    for (let index = 0; index < LAppDefine.ModelDir.length; index++) {
+      if (LAppDefine.DebugLogEnable) {
+        LAppPal.printMessage(`[APP]model load: ${index}`);
+      }
+
+      const model: string = LAppDefine.ModelDir[index];
+      const modelPath: string = LAppDefine.ResourcesPath + model + '/';
+      let modelJsonName: string = LAppDefine.ModelDir[index];
+      modelJsonName += '.model3.json';
+
+      this._models.pushBack(new LAppModel(this._eventCallback, index < 3));
+      this._models.at(index).loadAssets(modelPath, modelJsonName);
+    }
   }
 
   public setViewMatrix(m: CubismMatrix44) {
@@ -220,7 +245,8 @@ export class LAppLive2DManager {
     this._viewMatrix = new CubismMatrix44();
     this._models = new csmVector<LAppModel>();
     this._sceneIndex = 0;
-    this.changeScene(this._sceneIndex);
+    // this.changeScene(this._sceneIndex);
+    this.loadModels();
   }
 
   _viewMatrix: CubismMatrix44; // モデル描画に用いるview行列

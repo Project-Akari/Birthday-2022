@@ -1,65 +1,66 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DialogModel } from './models/dialog';
 import { LAppDelegate } from '@l2d-setup/lappdelegate';
-import * as L2dDefine from '@l2d-setup/lappdefine';
 import { ModelMotion } from './models/model_motion';
+import { EnaModel } from '@l2d-setup/Resources/characters/ena/ena_model';
+import { LukaModel } from '@l2d-setup/Resources/characters/luka/luka_model';
+import { MafuyuModel } from '@l2d-setup/Resources/characters/mafuyu/mafuyu_model';
+import { IGreetings } from '../greetings-dialog/greetings';
 
 @Component({
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.css']
 })
-export class DialogBoxComponent implements OnInit {
+export class DialogBoxComponent implements OnInit, OnChanges {
   public dialog: DialogModel;
-  public
   private _isDialogCompleted = false;
   private _timeouts = [];
-  private _l2dDelegate: LAppDelegate;
+  private _page = 1;
 
+  @Input() greeting: IGreetings;
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
+
   ngOnInit(): void {
-    this._l2dDelegate = LAppDelegate.getInstance()
-    this.dialog = new DialogModel({
-      page: 1,
-      characterName: 'Ena',
-      dialog: `"Are you enjoying your day so far? Know this, superstar
-        A wonderful day still awaits you
-        Right now is a grand moment for you
-        I wish you a great day and happy birthday" - Arya`,
-        modelMotion: [
-          new ModelMotion({
-            motion: 'w-adult-glad01',
-            expression: 'face_smile_01'
-          })
-        ]
-    });
+    this.dialog = this.greeting.getDialog(this._page++);
 
     this.startDialog();
   }
 
   startDialog(): void {
-    this.dialog.runModelMotion();
+    this.dialog.runMotion();
     for (let index = 0; index < this.dialog.length; index++) {
       this._timeouts.push(setTimeout(() => {
         this.dialog.currentDialog += this.dialog.getDialogChar(index);
+        this.dialog.dialogOnChange();
         if ((this.dialog.length - 1) == index) this._isDialogCompleted = true;
       }, 20 * index));
     }
   }
 
-  changeDialog(): void {
+
+
+  dialogOnClick(): void {
     if (!this._isDialogCompleted) {
       while (this._timeouts.length) {
         clearTimeout(this._timeouts.pop());
       }
+
+      const motionLength = this.dialog.motionLength;
+      if (motionLength > 0) {
+        this.dialog.runMotion(motionLength - 1);
+      }
       this._isDialogCompleted = true
+
+      this.dialog.currentDialog = this.dialog.fullDialog;
     }
     else {
-      this._l2dDelegate.changeMotion('face_smile_05', L2dDefine.PriorityForce);
-      this._l2dDelegate.changeMotion('w-cute-delicious02', L2dDefine.PriorityForce);
+      this.dialog = this.greeting.getDialog(this._page++);
+      this.startDialog();
     }
-
-    this.dialog.currentDialog = this.dialog.fullDialog;
   }
 }

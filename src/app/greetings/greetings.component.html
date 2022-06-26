@@ -1,8 +1,9 @@
-<img class="background" src="assets/img/Background/classroom.jpg" alt="">
-<div id="l2d-canvas"></div>
 <app-dialog-box
-  *ngIf="showDialogBox">
+  *ngIf="showDialogBox"
+  [greeting]="greeting">
 </app-dialog-box>
 <app-loading-screen
-  *ngIf="!isModelLoaded">
+*ngIf="!isModelLoaded">
 </app-loading-screen>
+<img class="background" src="assets/img/Background/classroom.jpg" alt="">
+<div id="l2d-canvas"></div>

@@ -4,7 +4,7 @@
 <div id="projectAkariLogo" *ngIf="projectAkari" class="center-content max-height fade-in">
   <img src="assets/logo/project_akari.png" class="project-akari-logo" alt="">
 </div>
-<div id="loginPage" (click)="navigateGreetings()" *ngIf="loginPage" class="max-height fade-in">
+<div id="loginPage" [routerLink]="['/greetings']" [queryParams]="{greetedby: 'intro'}" *ngIf="loginPage" class="max-height fade-in">
   <img src="assets/logo/project_akari.png" class="project-akari-img" alt="">
   <audio [autoplay]="true" loop>
     <source src="assets/sound/bgm/LoginBGM.mp3" type="audio/mpeg" />

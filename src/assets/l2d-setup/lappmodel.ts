@@ -73,6 +73,20 @@ enum LoadStep {
  */
 export class LAppModel extends CubismUserModel {
   private _eventCallback: LAppDefine.L2EventFunction
+  private _showModel: boolean;
+
+  public get isModelShown() : boolean {
+    return this._showModel;
+  }
+
+
+  public showModel(): void {
+    this._showModel = true;
+  }
+
+  public hideModel(): void {
+    this._showModel = false;
+  }
   /**
    * model3.jsonが置かれたディレクトリとファイルパスからモデルを生成する
    * @param dir
@@ -836,8 +850,9 @@ export class LAppModel extends CubismUserModel {
   /**
    * コンストラクタ
    */
-  public constructor(eventCallback: LAppDefine.L2EventFunction) {
+  public constructor(eventCallback: LAppDefine.L2EventFunction, showModel?: boolean = false) {
     super();
+    this._showModel = showModel;
     this._eventCallback = eventCallback;
     this._isMotionCompleted = false;
     this._modelSetting = null;
