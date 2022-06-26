@@ -38,9 +38,9 @@ export class LAppDelegate {
     return s_instance;
   }
 
-  public changeMotion(motion: string, character: LAppDefine.PuroSekaiChar, priority?: number, onCompleted?: Function): void {
+  public changeMotion(motion: string, index: number, priority?: number, onCompleted?: Function): void {
     const appManager = LAppLive2DManager.getInstance();
-    const model = appManager.getModel(character);
+    const model = appManager.getModel(index);
     model.startRandomMotion(
       motion, //'w-cool-blushed01','face_smile_01',
       priority ?? LAppDefine.PriorityIdle,
@@ -59,6 +59,7 @@ export class LAppDelegate {
   public releaseModels(): void {
     const appManager = LAppLive2DManager.getInstance();
     appManager.releaseAllModel();
+    this._eventCallback(LAppDefine.L2dEvents.ModelReleased);
   }
 
 

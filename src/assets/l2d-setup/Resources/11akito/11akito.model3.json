@@ -6,7 +6,22 @@
       "11akito_normal.2048/texture_00.png"
     ],
     "Physics": "11akito_normal.physics3.json",
-    "Motions": {}
+    "Motions": {
+      "m-adultnormal-tilthead0304": [
+        {
+          "File": "motions/m-adultnormal-tilthead0304.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_01": [
+        {
+          "File": "motions/face_smile_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
   },
   "Groups": [
     {

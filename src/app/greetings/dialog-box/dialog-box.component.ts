@@ -15,10 +15,16 @@ export class DialogBoxComponent implements OnInit, OnChanges {
   private _page = 1;
 
   @Input() greeting: IGreetings;
+  @Input() modelLoaded: number;
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    if (this.dialog && this.dialog.hasChangeModels) {
+      if (changes['modelLoaded'].currentValue == this.dialog.changeModelLength) {
+        console.log('test');
+        this.dialog.runMotion();
+      }
+    }
   }
 
   ngOnInit(): void {
@@ -29,7 +35,7 @@ export class DialogBoxComponent implements OnInit, OnChanges {
 
   startDialog(): void {
     if (this._isDialogCompleted) this._isDialogCompleted = false;
-    this.dialog.runMotion();
+    if (!this.dialog.hasChangeModels) this.dialog.runMotion();
     for (let index = 0; index < this.dialog.length; index++) {
       this._timeouts.push(setTimeout(() => {
         this.dialog.currentDialog += this.dialog.getDialogChar(index);

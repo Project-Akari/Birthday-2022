@@ -6,7 +6,22 @@
       "06haruka_normal.2048/texture_00.png"
     ],
     "Physics": "06haruka_normal.physics3.json",
-    "Motions": {}
+    "Motions": {
+      "w-cool-blushed01": [
+        {
+          "File": "motions/w-cool-blushed01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_sparkling_01": [
+        {
+          "File": "motions/face_sparkling_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
   },
   "Groups": [
     {

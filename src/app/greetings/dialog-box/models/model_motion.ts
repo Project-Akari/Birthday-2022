@@ -3,6 +3,7 @@ import * as L2dDefine from '@l2d-setup/lappdefine';
 import { PuroSekaiChar } from '@l2d-setup/lappdefine';
 
 interface ModelMotionArgs {
+  index?: number,
   character: PuroSekaiChar,
   motion: string,
   expression: string,
@@ -10,6 +11,7 @@ interface ModelMotionArgs {
 }
 
 export class ModelMotion {
+  private _index: number;
   private _character: PuroSekaiChar
   private _motion: string;
   private _expression: string;
@@ -25,7 +27,8 @@ export class ModelMotion {
   }
 
 
-  constructor({character, motion, expression, triggeredText}: ModelMotionArgs) {
+  constructor({index, character, motion, expression, triggeredText}: ModelMotionArgs) {
+    this._index = index;
     this._character = character;
     this._motion = motion;
     this._expression = expression;
@@ -41,7 +44,7 @@ export class ModelMotion {
   }
 
   private _runMotion(): void {
-    this._l2dDelegate.changeMotion(this._expression, this._character, L2dDefine.PriorityForce);
-    this._l2dDelegate.changeMotion(this._motion, this._character, L2dDefine.PriorityForce);
+    this._l2dDelegate.changeMotion(this._expression, this._index ?? this._character, L2dDefine.PriorityForce);
+    this._l2dDelegate.changeMotion(this._motion, this._index ?? this._character, L2dDefine.PriorityForce);
   }
 }

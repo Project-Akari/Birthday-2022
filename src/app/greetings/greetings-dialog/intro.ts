@@ -1,4 +1,7 @@
+import { AkitoModel } from "@l2d-setup/Resources/characters/akito/akito_model";
+import { AnModel } from "@l2d-setup/Resources/characters/an/an_model";
 import { EnaModel } from "@l2d-setup/Resources/characters/ena/ena_model";
+import { HarukaModel } from "@l2d-setup/Resources/characters/haruka/haruka_model";
 import { LukaModel } from "@l2d-setup/Resources/characters/luka/luka_model";
 import { MafuyuModel } from "@l2d-setup/Resources/characters/mafuyu/mafuyu_model";
 import { DialogModel } from "../dialog-box/models/dialog";
@@ -141,7 +144,27 @@ export class IntroGreeting implements IGreetings {
       page: 7,
       characterName: "Everyone",
       dialog: `Happy Birthday Akari!!`,
-      changeModels: [3, 4, 5]
+      changeModels: [HarukaModel.character, AnModel.character, AkitoModel.character],
+      modelMotion: [
+        new ModelMotion({
+          index: 0,
+          character: HarukaModel.character,
+          motion: HarukaModel.motions.coolBlushed1,
+          expression: HarukaModel.expressions.sparkling
+        }),
+        new ModelMotion({
+          index: 1,
+          character: AnModel.character,
+          motion: AnModel.motions.happyForward2,
+          expression: AnModel.expressions.sparkling
+        }),
+        new ModelMotion({
+          index: 2,
+          character: AkitoModel.character,
+          motion: AkitoModel.motions.adultTilthead0304,
+          expression: AkitoModel.expressions.smile1
+        }),
+      ]
     }));
     this.dialogs.push(new DialogModel({
       page: 8,

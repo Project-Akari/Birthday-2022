@@ -1,6 +1,7 @@
 <app-dialog-box
   *ngIf="showDialogBox"
-  [greeting]="greeting">
+  [greeting]="greeting"
+  [modelLoaded]="modelLoadedCount">
 </app-dialog-box>
 <app-loading-screen
 *ngIf="!isModelLoaded">

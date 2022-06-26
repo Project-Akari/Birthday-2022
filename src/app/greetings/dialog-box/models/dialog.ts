@@ -39,6 +39,11 @@ export class DialogModel {
     return this._changeModels != null && this._changeModels.length > 0;
   }
 
+  public get changeModelLength() : number {
+    return this._changeModels ? this._changeModels.length : 0;
+  }
+
+
 
   constructor({page, characterName, dialog, modelMotion, changeModels}: DialogModelParam ) {
     this._page = page;

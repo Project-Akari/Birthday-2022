@@ -17,6 +17,7 @@ export const CanvasSize: { width: number; height: number } | 'auto' = 'auto';
 
 export enum L2dEvents {
   ModelLoaded,
+  ModelReleased,
   MotionCompleted
 }
 
@@ -56,7 +57,14 @@ export const PowerImageName = 'CloseNormal.png';
 export enum PuroSekaiChar {
   Ena,
   Luka,
-  Mafuyu
+  Mafuyu,
+  Haruka,
+  An,
+  Akito,
+  Touya,
+  Tsukasa,
+  Kanade,
+  Kaito
 }
 export const ModelDir: string[] = ['19ena', '24luka', '18mafuyu', '06haruka', '10an', '11akito', '12touya', '13tsukasa', '17kanade', '26kaito'];
 export const ModelDirSize: number = ModelDir.length;

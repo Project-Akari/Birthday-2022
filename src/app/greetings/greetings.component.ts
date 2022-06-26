@@ -12,6 +12,7 @@ import { Greetings, IGreetings } from './greetings-dialog/greetings';
 export class GreetingsComponent implements OnInit, OnDestroy {
   showDialogBox = false;
   isModelLoaded = false;
+  modelLoadedCount = 0;
   greeting: IGreetings;
   constructor(private routh: ActivatedRoute) {
 
@@ -22,22 +23,25 @@ export class GreetingsComponent implements OnInit, OnDestroy {
       this.greeting = Greetings.getGreeting(params.greetedby);
     });
 
-    let modelLoadedCount = 0;
     const lAppDelegate = LAppDelegate.getInstance();
     lAppDelegate.eventListener((event: L2dDefine.L2dEvents) => {
       switch (event) {
         case L2dDefine.L2dEvents.ModelLoaded:
-          if (modelLoadedCount == 0) {
+          if (this.modelLoadedCount == 0) {
             setTimeout(() => {
               this.isModelLoaded = true;
               this.showDialogBox = true;
             }, 200);
           }
-          ++modelLoadedCount;
+          ++this.modelLoadedCount;
           console.log('Model Loaded');
           break;
           case L2dDefine.L2dEvents.MotionCompleted:
             console.log('Motion Completed');
+            break;
+          case L2dDefine.L2dEvents.ModelReleased:
+            this.modelLoadedCount = 0;
+            console.log('Model Released');
             break;
         default:
           break;
