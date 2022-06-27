@@ -7,6 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GreetingsComponent } from './greetings/greetings.component';
 import { DialogBoxComponent } from './greetings/dialog-box/dialog-box.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
     LandingPageComponent,
     GreetingsComponent,
     DialogBoxComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,7 @@ export class ModelMotion {
   }
 
 
-  constructor({index, character, motion, expression, triggeredText}: ModelMotionArgs) {
+  constructor({index = 0, character, motion, expression, triggeredText}: ModelMotionArgs) {
     this._index = index;
     this._character = character;
     this._motion = motion;

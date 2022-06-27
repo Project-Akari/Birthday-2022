@@ -1,0 +1,38 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "03honami_normal.moc3",
+    "Textures": [
+      "03honami_normal.2048/texture_00.png"
+    ],
+    "Physics": "03honami_normal.physics3.json",
+    "Motions": {
+      "face_sparkling_01": [
+        {
+          "File": "motions/face_sparkling_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-happy-glad01": [
+        {
+          "File": "motions/w-happy-glad01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    }
+  ]
+}

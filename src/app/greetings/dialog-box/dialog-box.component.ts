@@ -29,7 +29,6 @@ export class DialogBoxComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.dialog = this.greeting.getDialog(this._page++);
-
     this.startDialog();
   }
 

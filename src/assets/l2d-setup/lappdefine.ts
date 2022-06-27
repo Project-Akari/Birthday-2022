@@ -60,13 +60,14 @@ export enum PuroSekaiChar {
   Mafuyu,
   Haruka,
   An,
+  Honami,
   Akito,
   Touya,
   Tsukasa,
   Kanade,
   Kaito
 }
-export const ModelDir: string[] = ['19ena', '24luka', '18mafuyu', '06haruka', '10an', '11akito', '12touya', '13tsukasa', '17kanade', '26kaito'];
+export const ModelDir: string[] = ['19ena', '24luka', '18mafuyu', '06haruka', '10an', '03honami', '11akito', '12touya', '13tsukasa', '17kanade', '26kaito'];
 export const ModelDirSize: number = ModelDir.length;
 
 // 外部定義ファイル（json）と合わせる
