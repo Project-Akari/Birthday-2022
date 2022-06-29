@@ -1,1 +1,14 @@
-<p>modal works!</p>
+<div class="menu-modal">
+  <div class="menu-modal-container portrait">
+    <div class="menu-modal-header">
+      <div class="menu-modal-header-box"></div>
+      Juicy
+      <div class="menu-modal-header-box right"></div>
+    </div>
+    <div class="menu-modal-body">
+      <div [hidden]="hidePrevBtn" class="menu-model-arrow left" (click)="onPrev()"></div>
+      <ng-content></ng-content>
+      <div [hidden]="hideNextBtn" class="menu-model-arrow right" (click)="onNext()"></div>
+    </div>
+  </div>
+</div>

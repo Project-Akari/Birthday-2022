@@ -1,0 +1,111 @@
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.48);
+}
+
+.menu-modal-container {
+  position: relative;
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+}
+
+.menu-modal-container.portrait {
+  width: 40%;
+  height: 80%;
+  margin-top: -5%;
+}
+
+.menu-modal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background-color: #00ccbb;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-modal-header-box {
+  position: absolute;
+  top: 35%;
+  left: 3%;
+  height: 20px;
+  width: 20px;
+  background-color: #00ffdd;
+  transform: rotate(44deg);
+}
+
+.menu-modal-header-box.right {
+  right: 3%;
+  left: unset;
+}
+
+.menu-modal-header-box::after {
+  position: absolute;
+  top: -15px;
+  left: -4px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #00ccbb;
+  margin-left: 10px;
+  content: '.';
+}
+
+.menu-modal-body {
+  position: relative;
+  margin-top: 55px;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-model-arrow {
+  cursor: pointer;
+  animation: moveLeft 1s infinite;
+  position: absolute;
+  z-index: 5;
+  background-image: url("../../assets/img/component/Arrow.png");
+  background-size: 70px 70px;
+  height: 70px;
+  width: 70px;
+}
+
+.menu-model-arrow.left {
+  animation: moveLeft 1s infinite;
+  top: 35%;
+  left: 5px;
+}
+
+.menu-model-arrow.right {
+  animation: moveRight 1s infinite;
+  top: 35%;
+  right: 5px;
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(0) rotate(180deg); }
+  50% { transform: translateX(5px) rotate(180deg); }
+  100% { transform: translateX(0) rotate(180deg); }
+}
