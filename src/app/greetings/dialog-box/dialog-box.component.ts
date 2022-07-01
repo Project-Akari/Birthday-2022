@@ -10,6 +10,7 @@ import { IGreetings } from '../greetings-dialog/greetings';
 })
 export class DialogBoxComponent implements OnInit, OnChanges {
   public dialog: DialogModel;
+  public isShowModal = false;
   private _isDialogCompleted = false;
   private _timeouts = [];
   private _page = 1;
@@ -21,7 +22,6 @@ export class DialogBoxComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (this.dialog && this.dialog.hasChangeModels) {
       if (changes['modelLoaded'].currentValue == this.dialog.changeModelLength) {
-        console.log('test');
         this.dialog.runMotion();
       }
     }
@@ -39,12 +39,19 @@ export class DialogBoxComponent implements OnInit, OnChanges {
       this._timeouts.push(setTimeout(() => {
         this.dialog.currentDialog += this.dialog.getDialogChar(index);
         this.dialog.dialogOnChange();
-        if ((this.dialog.length - 1) == index) this._isDialogCompleted = true;
+        if ((this.dialog.length - 1) == index) {
+          setTimeout(() => {
+            if (this.dialog.hasModalContents) this._showModal(true);
+          }, 1000);
+          this._isDialogCompleted = true;
+        }
       }, 20 * index));
     }
   }
 
-
+  _showModal(isShow: boolean): void {
+    this.isShowModal = isShow;
+  }
 
   dialogOnClick(): void {
     if (!this._isDialogCompleted) {
@@ -57,8 +64,8 @@ export class DialogBoxComponent implements OnInit, OnChanges {
         this.dialog.runMotion(motionLength - 1);
       }
       this._isDialogCompleted = true
-
       this.dialog.currentDialog = this.dialog.fullDialog;
+      if (this.dialog.hasModalContents) this._showModal(true);
     }
     else {
       this.dialog = this.greeting.getDialog(this._page++);

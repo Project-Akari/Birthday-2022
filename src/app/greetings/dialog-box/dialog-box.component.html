@@ -11,9 +11,10 @@
     </div>
   </div>
 </div>
-<app-modal>
-  <div class="app-modal-contents">
+<app-modal *ngIf="isShowModal" [modalContents]="dialog.getModalContents()">
+  <!-- <div class="app-modal-contents"> -->
     <!-- <img src="assets/img/greetings/juicy/art.png" alt=""> -->
-    <img src="assets/img/greetings/juicy/greeting.png" alt="">
-  </div>
+    <!-- <img src="assets/img/greetings/juicy/greeting.png" alt="" > -->
+    <!-- <iframe src="https://drive.google.com/file/d/15mwpgUyylwdwtIpixTsooU7bKiKvXJ6x/preview" allow="autoplay"></iframe> -->
+  <!-- </div> -->
 </app-modal>

@@ -10,6 +10,7 @@ import { MafuyuModel } from "@l2d-setup/Resources/characters/mafuyu/mafuyu_model
 import { TouyaModel } from "@l2d-setup/Resources/characters/touya/touya_model";
 import { TsukasaModel } from "@l2d-setup/Resources/characters/tsukasa/tsukasa_model";
 import { DialogModel } from "../dialog-box/models/dialog";
+import { ModalContent } from "../dialog-box/models/modal_content";
 import { ModelMotion } from "../dialog-box/models/model_motion";
 import { IGreetings } from "./greetings";
 
@@ -49,7 +50,7 @@ export class IntroGreeting implements IGreetings {
           motion: MafuyuModel.motions.coolPoseNod3,
           expression: MafuyuModel.expressions.smile1
         }),
-      ]
+      ],
     }));
     this.dialogs.push(new DialogModel({
       page: 2,
@@ -342,6 +343,16 @@ export class IntroGreeting implements IGreetings {
           motion: HarukaModel.motions.cuteFidget1,
           expression: HarukaModel.expressions.shy1
         }),
+      ],
+      modalContent: [
+        new ModalContent({
+          isPortrait: true,
+          link: 'assets/img/greetings/juicy/greeting.png'
+        }),
+        new ModalContent({
+          isPortrait: false,
+          link: 'assets/img/greetings/juicy/art.png'
+        })
       ]
     }));
   }

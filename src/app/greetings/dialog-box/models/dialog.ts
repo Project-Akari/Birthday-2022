@@ -1,4 +1,5 @@
 import { LAppDelegate } from '@l2d-setup/lappdelegate';
+import { ModalContent } from './modal_content';
 import { ModelMotion } from './model_motion';
 
 interface DialogModelParam {
@@ -7,6 +8,7 @@ interface DialogModelParam {
   dialog: string,
   modelMotion?: ModelMotion[],
   changeModels?: number[];
+  modalContent?: ModalContent[]
 }
 
 export class DialogModel {
@@ -18,6 +20,7 @@ export class DialogModel {
   private _dialogString: string;
   private _isMotionRunning: boolean = false;
   private _changeModels: number[];
+  private _modalContent: ModalContent[]
 
   public get length() : number {
     return this._dialogArray.length;
@@ -39,23 +42,33 @@ export class DialogModel {
     return this._changeModels != null && this._changeModels.length > 0;
   }
 
+  public get hasModalContents() : boolean {
+    return this._modalContent != null;
+  }
+
+
   public get changeModelLength() : number {
     return this._changeModels ? this._changeModels.length : 0;
   }
 
 
 
-  constructor({page, characterName, dialog, modelMotion, changeModels}: DialogModelParam ) {
+  constructor({page, characterName, dialog, modelMotion, changeModels, modalContent}: DialogModelParam ) {
     this._page = page;
     this.characterName = characterName;
     this._dialogArray = Array.from(dialog);
     this._dialogString = dialog;
     this._motion = modelMotion;
     this._changeModels = changeModels;
+    this._modalContent = modalContent;
   }
 
   public getDialogChar(index: number): string {
     return this._dialogArray[index];
+  }
+
+  public getModalContents() : ModalContent[] {
+    return this._modalContent;
   }
 
   public runMotion(index?: number): void {
