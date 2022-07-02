@@ -2,7 +2,7 @@
   <div id="modalContainerId" class="menu-modal-container portrait">
     <div class="menu-modal-header">
       <div class="menu-modal-header-box"></div>
-      Juicy
+      {{title}}
       <div class="menu-modal-header-box right"></div>
     </div>
     <div class="menu-modal-body">
@@ -13,5 +13,6 @@
       </div>
       <div [hidden]="hideNextBtn" class="menu-model-arrow right" (click)="modalOnNext()"></div>
     </div>
+    <div class="menu-model-btn" (click)="modalOnClose()">Close</div>
   </div>
 </div>

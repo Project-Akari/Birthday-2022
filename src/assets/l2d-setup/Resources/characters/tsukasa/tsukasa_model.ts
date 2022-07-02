@@ -6,7 +6,7 @@ import { PuroSekaiChar } from '@l2d-setup/lappdefine';
 export class TsukasaModel {
   public static characterName = "Tsukasa";
   public static character: PuroSekaiChar = PuroSekaiChar.Tsukasa;
-  public static directoryIndex = 1;
+  public static directoryIndex = this.character;
   public static motions = new TsukasaMotions();
   public static expressions = new TsukasaExpressions();
 }

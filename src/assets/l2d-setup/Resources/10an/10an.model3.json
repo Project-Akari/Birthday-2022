@@ -20,6 +20,20 @@
           "FadeInTime": 0.5,
           "FadeOutTime": 0.5
         }
+      ],
+      "w-cool-nodtilthead0102": [
+        {
+          "File": "motions/w-cool-nodtilthead0102.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_05": [
+        {
+          "File": "motions/face_smile_05.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
       ]
     }
   },

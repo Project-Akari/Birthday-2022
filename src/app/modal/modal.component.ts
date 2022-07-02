@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ModalContent } from '../greetings/dialog-box/models/modal_content';
 
 @Component({
@@ -10,12 +10,14 @@ export class ModalComponent implements OnInit, OnChanges {
   public hasModalContents: boolean = false;
   public hidePrevBtn: boolean = true;
   public hideNextBtn: boolean = false;
+  public title: string = "";
   private _elements: HTMLElement[] = []
   private _currentIndex: number = 0;
 
   @Input() modalContents: ModalContent[] = []
   @Input() onPrev: () => void;
   @Input() onNext: () => void;
+  @Output() onClose = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -37,13 +39,15 @@ export class ModalComponent implements OnInit, OnChanges {
     this._currentIndex = 0;
     this._elements = [];
     this.hideNextBtn = this.modalContents.length == 1;
+    this._changeContainerOrient(this.modalContents[this._currentIndex].isPortrait);
     setTimeout(() => {
       const parentElement = document.getElementById('modalContentElem');
+      this.title = this.modalContents[0].title;
       this.modalContents.forEach((content, index) => {
         if (content.isImage) this._elements.push(content.buildImage(parentElement, index != 0));
         else if (content.isEmbed) this._elements.push(content.buildEmbed(parentElement, index != 0));
       });
-    }, 500);
+    }, 200);
   }
 
   private _changeContainerOrient(isPortrait: boolean) {
@@ -70,5 +74,9 @@ export class ModalComponent implements OnInit, OnChanges {
     this.hidePrevBtn = this._currentIndex == 0 ;
     this.hideNextBtn = this.modalContents.length == (this._currentIndex + 1) ;
     if (this.onNext) this.onNext();
+  }
+
+  public modalOnClose(): void {
+    this.onClose.emit();
   }
 }

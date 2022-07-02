@@ -1,4 +1,5 @@
 interface ModelContentArgs {
+  title: string;
   isImage?: boolean;
   isEmbed?: boolean;
   isPortrait: boolean;
@@ -10,12 +11,16 @@ export class ModalContent {
     private _isEmbed?: boolean;
     private _isPortrait: boolean;
     private _link: string;
+    private _modalTitle: string;
 
+
+    public get title() : string {
+      return this._modalTitle;
+    }
 
     public get isImage() : boolean {
       return this._isImage;
     }
-
 
     public get isEmbed() : boolean {
       return this._isEmbed;
@@ -25,14 +30,14 @@ export class ModalContent {
       return this._isPortrait;
     }
 
-
     public get link() : string {
       return this._link;
     }
 
 
 
-    constructor({isImage = true, isEmbed = false, isPortrait, link}: ModelContentArgs) {
+    constructor({title, isImage = true, isEmbed = false, isPortrait, link}: ModelContentArgs) {
+      this._modalTitle = title;
       this._isImage = isImage && !isEmbed;
       this._isEmbed = isEmbed;
       this._isPortrait = isPortrait;

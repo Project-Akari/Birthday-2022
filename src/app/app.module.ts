@@ -8,6 +8,8 @@ import { GreetingsComponent } from './greetings/greetings.component';
 import { DialogBoxComponent } from './greetings/dialog-box/dialog-box.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { ModalComponent } from './modal/modal.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import { ModalComponent } from './modal/modal.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

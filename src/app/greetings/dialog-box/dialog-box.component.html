@@ -11,7 +11,7 @@
     </div>
   </div>
 </div>
-<app-modal *ngIf="isShowModal" [modalContents]="dialog.getModalContents()">
+<app-modal *ngIf="isShowModal" [modalContents]="dialog.getModalContents()" (onClose)="modalOnClose()">
   <!-- <div class="app-modal-contents"> -->
     <!-- <img src="assets/img/greetings/juicy/art.png" alt=""> -->
     <!-- <img src="assets/img/greetings/juicy/greeting.png" alt="" > -->

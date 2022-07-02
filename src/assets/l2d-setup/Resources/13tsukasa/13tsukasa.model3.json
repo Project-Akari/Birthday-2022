@@ -20,6 +20,20 @@
           "FadeInTime": 0.5,
           "FadeOutTime": 0.5
         }
+      ],
+      "m-tsukasa-lookup01": [
+        {
+          "File": "motions/m-tsukasa-lookup01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_06": [
+        {
+          "File": "motions/face_smile_06.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
       ]
     }
   },

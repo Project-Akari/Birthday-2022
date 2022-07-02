@@ -1,5 +1,4 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,19 +10,17 @@ export class LandingPageComponent implements AfterViewInit {
   projectAkari = false;
   loginPage = false;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngAfterViewInit(): void {
     this._initLogos();
   }
 
   ngOnInit(): void {
-
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      console.log('controller changed');
+  })
   }
-
-  // navigateGreetings(): void {
-  //   this.router.navigate(['/greetings']);
-  // }
 
   private _initLogos(): void {
     const logos = [

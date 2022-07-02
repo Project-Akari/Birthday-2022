@@ -6,7 +6,7 @@ import { PuroSekaiChar } from '@l2d-setup/lappdefine';
 export class MafuyuModel {
   public static characterName = "Mafuyu";
   public static character = PuroSekaiChar.Mafuyu;
-  public static directoryIndex = 2;
+  public static directoryIndex = this.character;
   public static motions = new MafuyuMotions();
   public static expressions = new MafuyuExpressions();
 }

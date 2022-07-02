@@ -32,6 +32,10 @@ export class DialogBoxComponent implements OnInit, OnChanges {
     this.startDialog();
   }
 
+  _showModal(isShow: boolean): void {
+    this.isShowModal = isShow;
+  }
+
   startDialog(): void {
     if (this._isDialogCompleted) this._isDialogCompleted = false;
     if (!this.dialog.hasChangeModels) this.dialog.runMotion();
@@ -42,15 +46,11 @@ export class DialogBoxComponent implements OnInit, OnChanges {
         if ((this.dialog.length - 1) == index) {
           setTimeout(() => {
             if (this.dialog.hasModalContents) this._showModal(true);
-          }, 1000);
+          }, 1300);
           this._isDialogCompleted = true;
         }
       }, 20 * index));
     }
-  }
-
-  _showModal(isShow: boolean): void {
-    this.isShowModal = isShow;
   }
 
   dialogOnClick(): void {
@@ -65,12 +65,18 @@ export class DialogBoxComponent implements OnInit, OnChanges {
       }
       this._isDialogCompleted = true
       this.dialog.currentDialog = this.dialog.fullDialog;
-      if (this.dialog.hasModalContents) this._showModal(true);
+      setTimeout(() => {
+        if (this.dialog.hasModalContents) this._showModal(true);
+      }, 1300);
     }
     else {
       this.dialog = this.greeting.getDialog(this._page++);
       this.dialog.updateModels();
       if (this.dialog) this.startDialog();
     }
+  }
+
+  modalOnClose(): void {
+    this._showModal(false);
   }
 }
