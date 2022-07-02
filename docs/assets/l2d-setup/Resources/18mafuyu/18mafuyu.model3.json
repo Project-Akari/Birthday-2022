@@ -1,0 +1,122 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "18mafuyu_normal.moc3",
+    "Textures": [
+      "18mafuyu_normal.2048/texture_00.png"
+    ],
+    "Physics": "18mafuyu_normal.physics3.json",
+    "Motions": {
+      "w-cool-posenod03": [
+        {
+          "File": "motions/w-cool-posenod03.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-adult-nod01": [
+        {
+          "File": "motions/w-adult-nod01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-happy-posenod03": [
+        {
+          "File": "motions/w-happy-posenod03.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-cute-posetilthead04": [
+        {
+          "File": "motions/w-cute-posetilthead04.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-cute-shakehead02": [
+        {
+          "File": "motions/w-cute-shakehead02.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-cute-shakehead03": [
+        {
+          "File": "motions/w-cute-shakehead03.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-cool-shakehand01": [
+        {
+          "File": "motions/w-cool-shakehand01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_normal_01": [
+        {
+          "File": "motions/face_normal_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_01": [
+        {
+          "File": "motions/face_smile_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_03": [
+        {
+          "File": "motions/face_smile_03.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_04": [
+        {
+          "File": "motions/face_smile_04.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_05": [
+        {
+          "File": "motions/face_smile_05.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_darksmile_02": [
+        {
+          "File": "motions/face_darksmile_02.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_shy_02": [
+        {
+          "File": "motions/face_shy_02.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    }
+  ]
+}

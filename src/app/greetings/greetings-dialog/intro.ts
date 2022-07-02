@@ -257,7 +257,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 11,
-      characterName: LukaModel.characterName,
+      characterName: LukaModel.portName,
       dialog: `"Are you enjoying your day so far? Know this, superstar
         A wonderful day still awaits you Right now is a grand moment for you
         I wish you a great day and happy birthday" - Arya`,
@@ -296,7 +296,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 14,
-      characterName: KaitoModel.characterName,
+      characterName: KaitoModel.portName,
       dialog: `"Happy Birthday Akariiiiiiiiin. Sana maging happy ang
         araw mo today at wag ka pa stress sa work. Abusuhin ang VL
         if ma pwede gashaahs chz" - Yuyan`,
@@ -341,7 +341,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 17,
-      characterName: HarukaModel.characterName,
+      characterName: HarukaModel.portName,
       dialog: `Happy Birthday Akari. *Shows you a birthday card and
         an art*`,
       modelMotion: [
@@ -378,7 +378,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 19,
-      characterName: AnModel.characterName,
+      characterName: AnModel.portName,
       dialog: `I'm next. "Hallo ate Koharu my project sekai buddy!! Happy happy birthday!!!
         I wuv u!!! Sana ay mag enjoy k sa iyong kaarawan!!!!" - Sham. *Shows you an art*`,
       changeModels: [AnModel.character],
@@ -411,7 +411,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 21,
-      characterName: TouyaModel.characterName,
+      characterName: TouyaModel.portName,
       dialog: `Oh It's my turn. "Happy Birthday Akari! Thanks for being such a good friend.
         Palagi kang nandyan para makinig sa mga problema ko at palagi mo akong sinasamahan sa mga laro. `,
       changeModels: [TouyaModel.character],
@@ -431,7 +431,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 22,
-      characterName: TouyaModel.characterName,
+      characterName: TouyaModel.portName,
       dialog: `Thank you kasi palagi mong sinasabayan mga trip ko at mga plans ko katulad nung sa party natin sa Port.
         Wish ko na sana mas alagaan mo na sarili mo.`,
       modelMotion: [
@@ -444,7 +444,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 23,
-      characterName: TouyaModel.characterName,
+      characterName: TouyaModel.portName,
       dialog: `Nakakabahala kayo palagi sa Port pag may nagkakasakit dahil sa kakapuyat niyo or dahil
         hindi kayo kumakain nang maayos. Wag masyadong matigas ang ulo!`,
       modelMotion: [
@@ -457,7 +457,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 24,
-      characterName: TouyaModel.characterName,
+      characterName: TouyaModel.portName,
       dialog: `Enjoy your day! More birthdays and more games to come. God Bless! Lablab!" - From your Anghel Friend.
         *Shows you a video from Sky*`,
       modelMotion: [
@@ -490,7 +490,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 26,
-      characterName: ShizukuModel.characterName,
+      characterName: ShizukuModel.portName,
       dialog: `My turn. "Happy birthday Akarin!! Sana ay mabuhay ka pa nang matagal and enjoy your life to the fullest!
        alam kong super bait mo kaya you deserve all the good things in life and`,
       changeModels: [ShizukuModel.character],
@@ -510,7 +510,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 27,
-      characterName: ShizukuModel.characterName,
+      characterName: ShizukuModel.portName,
       dialog: `hope that never a bad day approach you though it's impossible but I hope the world will be always gentle to you.`,
       modelMotion: [
         new ModelMotion({
@@ -522,13 +522,13 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 28,
-      characterName: ShizukuModel.characterName,
+      characterName: ShizukuModel.portName,
       dialog: ` Enjoy your day and always take care of yourself <3 I love you! And always know you have me
         and Port Café always." - Jikan. *Shows you a picture of both you and song*`,
       modelMotion: [
         new ModelMotion({
           character: ShizukuModel.character,
-          motion: ShizukuModel.motions.happyTilthead1,
+          motion: ShizukuModel.motions.coolTilthead2,
           expression: ShizukuModel.expressions.smile1
         }),
       ],
@@ -548,7 +548,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 29,
-      characterName: AkitoModel.characterName,
+      characterName: AkitoModel.portName,
       dialog: `Oh, It's my turn. Happy Birthday Akarin! *Shows you a greeting picture*`,
       changeModels: [AkitoModel.character],
       modelMotion: [
@@ -568,7 +568,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 30,
-      characterName: AkitoModel.characterName,
+      characterName: AkitoModel.portName,
       dialog: `"Happy birthday AKARIN!!! Hope na makuha mo lahat ng mga gusto mo sa buhay pati si SUI-CHAN XDDDD!
         and MBTC! Greet muna ngayon ha! bawi ako pag di na busy" - Pogi pero Gwapo (Bene)`,
       changeModels: [TsukasaModel.character],
@@ -577,6 +577,91 @@ export class IntroGreeting implements IGreetings {
           character: TsukasaModel.character,
           motion: TsukasaModel.motions.lookup1,
           expression: TsukasaModel.expressions.smile6
+        }),
+      ],
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 31,
+      characterName: HonamiModel.portName,
+      dialog: `I'm last. "Happy Birthday Akari!!! Sana ay masaya ka sa birthday mo. Pasensya kung kulang2x features
+        ng Project Akari: Birthday Stage! HAHAHA Ito lang nakayanan ni Emma xD.`,
+      changeModels: [HonamiModel.character],
+      modelMotion: [
+        new ModelMotion({
+          character: HonamiModel.character,
+          motion: HonamiModel.motions.cuteGlad1,
+          expression: HonamiModel.expressions.smile2
+        }),
+        new ModelMotion({
+          character: HonamiModel.character,
+          motion: HonamiModel.motions.cuteShy1,
+          expression: HonamiModel.expressions.smile1,
+          triggeredText: 'Stage!'
+        }),
+      ],
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 32,
+      characterName: HonamiModel.portName,
+      dialog: `Sana ay makuha mo mga gusto mo sa buhay at si Ena Hihihi. Stay Healthy ka palagi kung hindi
+        matatalo na kita sa project sekai at kukunin ko trono mo xD" - Emma`,
+      modelMotion: [
+        new ModelMotion({
+          character: HonamiModel.character,
+          motion: HonamiModel.motions.cutePoseNod1,
+          expression: HonamiModel.expressions.sparkling
+        }),
+        new ModelMotion({
+          character: HonamiModel.character,
+          motion: HonamiModel.motions.cuteSmug1,
+          expression: HonamiModel.expressions.closeEye2,
+          triggeredText: 'matatalo'
+        }),
+      ],
+    }));this.dialogs.push(new DialogModel({
+      page: 33,
+      characterName: LukaModel.characterName,
+      dialog: `I think Honami was the last one. Happy Birthday Akari and Enjoy your day. Good Bye!`,
+      changeModels: [EnaModel.character, LukaModel.character, MafuyuModel.character],
+      modelMotion: [
+        new ModelMotion({
+          index: 0,
+          character: EnaModel.character,
+          motion: EnaModel.motions.adultGlad1,
+          expression: EnaModel.expressions.smile1
+        }),
+        new ModelMotion({
+          index: 1,
+          character: LukaModel.character,
+          motion: LukaModel.motions.coolPoseNod1,
+          expression: LukaModel.expressions.smile1
+        }),
+        new ModelMotion({
+          index: 2,
+          character: MafuyuModel.character,
+          motion: MafuyuModel.motions.coolPoseNod3,
+          expression: MafuyuModel.expressions.smile1
+        }),
+        new ModelMotion({
+          index: 0,
+          character: EnaModel.character,
+          motion: EnaModel.motions.coolShakehand1,
+          expression: EnaModel.expressions.smile1,
+          triggeredText: 'Good Bye'
+        }),
+        new ModelMotion({
+          index: 1,
+          character: LukaModel.character,
+          motion: LukaModel.motions.happyShakehand1,
+          expression: LukaModel.expressions.smile1,
+          triggeredText: 'Good Bye'
+        }),
+        new ModelMotion({
+          index: 2,
+          character: MafuyuModel.character,
+          motion: MafuyuModel.motions.cuteShakehand1,
+          expression: MafuyuModel.expressions.smile1,
+          triggeredText: 'Good Bye'
         }),
       ],
     }));

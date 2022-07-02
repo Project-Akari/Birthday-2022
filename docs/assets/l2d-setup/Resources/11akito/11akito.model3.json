@@ -1,0 +1,38 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "11akito_normal.moc3",
+    "Textures": [
+      "11akito_normal.2048/texture_00.png"
+    ],
+    "Physics": "11akito_normal.physics3.json",
+    "Motions": {
+      "m-adultnormal-tilthead0304": [
+        {
+          "File": "motions/m-adultnormal-tilthead0304.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_01": [
+        {
+          "File": "motions/face_smile_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    }
+  ]
+}
