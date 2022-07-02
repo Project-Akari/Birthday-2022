@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build --output-path=docs",
+    "build": "ng build --output-path=docs --base-href=/Akari-Birthday-202/",
+    "buildDebug": "ng build --output-path=dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "http": "http-server -p 8081 -c-1 dist/project-akari"
+    "http": "http-server -p 8081 -c-1 dist"
   },
   "browser": {
     "fs": false,
