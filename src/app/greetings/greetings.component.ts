@@ -14,6 +14,7 @@ export class GreetingsComponent implements OnInit, OnDestroy {
   isModelLoaded = false;
   modelLoadedCount = 0;
   greeting: IGreetings;
+  _isDialogShown = false;
   constructor(private routh: ActivatedRoute) {
 
   }
@@ -35,10 +36,11 @@ export class GreetingsComponent implements OnInit, OnDestroy {
     lAppDelegate.eventListener((event: L2dDefine.L2dEvents) => {
       switch (event) {
         case L2dDefine.L2dEvents.ModelLoaded:
-          if (this.modelLoadedCount == 0) {
+          if (!this._isDialogShown) {
             setTimeout(() => {
               this.isModelLoaded = true;
               this.showDialogBox = true;
+              this._isDialogShown = true;
               this.greeting.getDialog(1).runMotion();
             }, 200);
           }

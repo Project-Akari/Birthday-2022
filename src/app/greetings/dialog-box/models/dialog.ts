@@ -18,7 +18,7 @@ export class DialogModel {
   private _page: number;
   private _dialogArray: string[];
   private _dialogString: string;
-  // private _isMotionRunning: boolean = false;
+  private _isMotionRunning: number[] = [];
   private _changeModels: number[];
   private _modalContent: ModalContent[]
 
@@ -96,10 +96,11 @@ export class DialogModel {
       const motions = this._motion.filter(f => this.currentDialog.includes(f.triggeredText));
       if (motions.length > 0) {
         for (let index = 0; index < motions.length; index++) {
-          // if (!this._isMotionRunning) {
-          //   this._isMotionRunning = true;
-          // }
-          motions[index].run();
+          const motion = motions[index]; ModelMotion
+          if (!this._isMotionRunning.includes(motion.characterIndex)) {
+            this._isMotionRunning.push(motion.characterIndex);
+            motions[index].run();
+          }
         }
       }
     }

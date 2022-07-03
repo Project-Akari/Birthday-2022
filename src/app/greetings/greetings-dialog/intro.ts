@@ -344,7 +344,7 @@ export class IntroGreeting implements IGreetings {
       page: 17,
       characterName: HarukaModel.portName,
       dialog: `Happy Birthday Akari. *Shows you a birthday card and
-        an art*`,
+        a drawing*`,
       modelMotion: [
         new ModelMotion({
           character: HarukaModel.character,
@@ -381,7 +381,7 @@ export class IntroGreeting implements IGreetings {
       page: 19,
       characterName: AnModel.portName,
       dialog: `I'm next. "Hallo ate Koharu my project sekai buddy!! Happy happy birthday!!!
-        I wuv u!!! Sana ay mag enjoy k sa iyong kaarawan!!!!" - Sham. *Shows you an art*`,
+        I wuv u!!! Sana ay mag enjoy k sa iyong kaarawan!!!!" - Sham. *Shows you a drawing*`,
       changeModels: [AnModel.character],
       modelMotion: [
         new ModelMotion({
@@ -504,7 +504,7 @@ export class IntroGreeting implements IGreetings {
         new ModelMotion({
           character: ShizukuModel.character,
           motion: ShizukuModel.motions.coolTilthead2,
-          expression: ShizukuModel.expressions.smile2,
+          expression: ShizukuModel.expressions.smile1,
           triggeredText: 'alam kong'
         }),
       ],
@@ -516,8 +516,8 @@ export class IntroGreeting implements IGreetings {
       modelMotion: [
         new ModelMotion({
           character: ShizukuModel.character,
-          motion: ShizukuModel.motions.happyTilthead1,
-          expression: ShizukuModel.expressions.smile1
+          motion: ShizukuModel.motions.adultNod3,
+          expression: ShizukuModel.expressions.smile5
         }),
       ],
     }));
@@ -525,12 +525,12 @@ export class IntroGreeting implements IGreetings {
       page: 28,
       characterName: ShizukuModel.portName,
       dialog: ` Enjoy your day and always take care of yourself <3 I love you! And always know you have me
-        and Port Café always." - Jikan. *Shows you a picture of both you and song*`,
+        and Port Café always." - Jikan. *Shows you a picture of both you and cover song*`,
       modelMotion: [
         new ModelMotion({
           character: ShizukuModel.character,
-          motion: ShizukuModel.motions.coolTilthead2,
-          expression: ShizukuModel.expressions.smile1
+          motion: ShizukuModel.motions.adultBlushed3,
+          expression: ShizukuModel.expressions.sparkling1
         }),
       ],
       modalContent: [
@@ -550,7 +550,7 @@ export class IntroGreeting implements IGreetings {
     this.dialogs.push(new DialogModel({
       page: 29,
       characterName: AkitoModel.portName,
-      dialog: `Oh, It's my turn. Happy Birthday Akarin! *Shows you a greeting picture*`,
+      dialog: `Oh, It's my turn. Happy Birthday Akarin! *Shows you a picture message*`,
       changeModels: [AkitoModel.character],
       modelMotion: [
         new ModelMotion({
@@ -583,6 +583,54 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 31,
+      characterName: KanadeModel.portName,
+      dialog: `"Happy birthday, Akarin! Sana nagustuhan mo yung skin na ginawa ko sa OC mo hehe 🙂 nag-improvise nako,
+      shoulder bust lang yon eh :PepeLaugh:`,
+      changeModels: [KanadeModel.character],
+      modelMotion: [
+        new ModelMotion({
+          character: KanadeModel.character,
+          motion: KanadeModel.motions.normalNod5,
+          expression: KanadeModel.expressions.normal2
+        }),
+      ],
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 32,
+      characterName: KanadeModel.portName,
+      dialog: `I hope you enjoy your day to the fullest, and more birthdays to come!" - Endergorl sa port`,
+      modelMotion: [
+        new ModelMotion({
+          character: KanadeModel.character,
+          motion: KanadeModel.motions.cuteGlad5,
+          expression: KanadeModel.expressions.smile5
+        }),
+      ],
+      modalContent: [
+        new ModalContent({
+          title: 'Asra',
+          isPortrait: true,
+          link: 'assets/img/greetings/asra/oc.png'
+        }),
+        new ModalContent({
+          title: 'Asra',
+          isPortrait: true,
+          link: 'assets/img/greetings/asra/oc2.png'
+        }),
+        new ModalContent({
+          title: 'Asra',
+          isPortrait: true,
+          link: 'assets/img/greetings/asra/oc3.png'
+        }),
+        new ModalContent({
+          title: 'Asra',
+          isPortrait: true,
+          link: 'assets/img/greetings/asra/oc4.png'
+        }),
+      ]
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 33,
       characterName: HonamiModel.portName,
       dialog: `I'm last. "Happy Birthday Akari!!! Sana ay masaya ka sa birthday mo. Pasensya kung kulang2x features
         ng Project Akari: Birthday Stage! HAHAHA Ito lang nakayanan ni Emma xD.`,
@@ -602,7 +650,7 @@ export class IntroGreeting implements IGreetings {
       ],
     }));
     this.dialogs.push(new DialogModel({
-      page: 32,
+      page: 34,
       characterName: HonamiModel.portName,
       dialog: `Sana ay makuha mo mga gusto mo sa buhay at si Ena Hihihi. Stay Healthy ka palagi kung hindi
         matatalo na kita sa project sekai at kukunin ko trono mo xD" - Emma`,
@@ -615,12 +663,13 @@ export class IntroGreeting implements IGreetings {
         new ModelMotion({
           character: HonamiModel.character,
           motion: HonamiModel.motions.cuteSmug1,
-          expression: HonamiModel.expressions.closeEye2,
+          expression: HonamiModel.expressions.sparkling,
           triggeredText: 'matatalo'
         }),
       ],
-    }));this.dialogs.push(new DialogModel({
-      page: 33,
+    }));
+    this.dialogs.push(new DialogModel({
+      page: 35,
       characterName: LukaModel.characterName,
       dialog: `I think Honami was the last one. Happy Birthday Akari and Enjoy your day. Good Bye!`,
       changeModels: [EnaModel.character, LukaModel.character, MafuyuModel.character],

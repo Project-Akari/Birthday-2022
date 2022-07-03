@@ -1,4 +1,11 @@
+import { AsraGreeting } from "src/app/greetings/greetings-dialog/asra";
+import { BeneGreeting } from "src/app/greetings/greetings-dialog/bene";
+import { DoruGreeting } from "src/app/greetings/greetings-dialog/doru";
+import { EmmaKunGreeting } from "src/app/greetings/greetings-dialog/emma-kun";
 import { JikanGreeting } from "src/app/greetings/greetings-dialog/jikan";
+import { JuicyGreeting } from "src/app/greetings/greetings-dialog/juicy";
+import { ShamGreeting } from "src/app/greetings/greetings-dialog/sham";
+import { SkyGreeting } from "src/app/greetings/greetings-dialog/sky";
 import { GroupMember } from "./member";
 
 export enum GroupsKey {
@@ -83,7 +90,7 @@ export class SekaiGroups {
     members: [
       new GroupMember({
         group: GroupsKey.leoNeed,
-        greetingId: '',
+        greetingId: EmmaKunGreeting.greetingId,
         portName: 'Emma-Kun',
         imgUrl: 'assets/img/characters/EmmaKun.png'
       })
@@ -97,9 +104,15 @@ export class SekaiGroups {
     members: [
       new GroupMember({
         group: GroupsKey.moreMoreJump,
-        greetingId: '',
+        greetingId: JuicyGreeting.greetingId,
         portName: 'Juicy',
         imgUrl: 'assets/img/characters/Juicy.png'
+      }),
+      new GroupMember({
+        group: GroupsKey.moreMoreJump,
+        greetingId: JikanGreeting.greetingId,
+        portName: 'Jikan',
+        imgUrl: 'assets/img/characters/Jikan2.png'
       })
     ]
   });
@@ -111,19 +124,19 @@ export class SekaiGroups {
     members: [
       new GroupMember({
         group: GroupsKey.vividSquad,
-        greetingId: '',
+        greetingId: DoruGreeting.greetingId,
         portName: 'Doru',
         imgUrl: 'assets/img/characters/Doru.png'
       }),
       new GroupMember({
         group: GroupsKey.vividSquad,
-        greetingId: '',
+        greetingId: ShamGreeting.greetingId,
         portName: 'Sham',
         imgUrl: 'assets/img/characters/Sham.png'
       }),
       new GroupMember({
         group: GroupsKey.vividSquad,
-        greetingId: '',
+        greetingId: SkyGreeting.greetingId,
         portName: 'Sky',
         imgUrl: 'assets/img/characters/Sky.png'
       })
@@ -137,7 +150,7 @@ export class SekaiGroups {
     members: [
       new GroupMember({
         group: GroupsKey.wxS,
-        greetingId: '',
+        greetingId: BeneGreeting.greetingId,
         portName: 'Bene',
         imgUrl: 'assets/img/characters/Bene.png'
       })
@@ -151,7 +164,7 @@ export class SekaiGroups {
     members: [
       new GroupMember({
         group: GroupsKey.n25,
-        greetingId: '',
+        greetingId: AsraGreeting.greetingId,
         portName: 'Asra',
         imgUrl: 'assets/img/characters/Asra.png'
       })

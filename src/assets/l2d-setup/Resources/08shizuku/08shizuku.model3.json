@@ -34,6 +34,34 @@
           "FadeInTime": 0.5,
           "FadeOutTime": 0.5
         }
+      ],
+      "w-adult-nod03": [
+        {
+          "File": "motions/w-adult-nod03.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_05": [
+        {
+          "File": "motions/face_smile_05.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-adult-blushed03": [
+        {
+          "File": "motions/w-adult-blushed03.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_sparkling_01": [
+        {
+          "File": "motions/face_sparkling_01.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
       ]
     }
   },

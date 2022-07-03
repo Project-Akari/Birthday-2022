@@ -56,7 +56,7 @@ export class JikanGreeting implements IGreetings {
         new ModelMotion({
           character: ShizukuModel.character,
           motion: ShizukuModel.motions.coolTilthead2,
-          expression: ShizukuModel.expressions.smile2,
+          expression: ShizukuModel.expressions.smile1,
           triggeredText: 'alam kong'
         }),
       ],
@@ -68,8 +68,8 @@ export class JikanGreeting implements IGreetings {
       modelMotion: [
         new ModelMotion({
           character: ShizukuModel.character,
-          motion: ShizukuModel.motions.happyTilthead1,
-          expression: ShizukuModel.expressions.smile1
+          motion: ShizukuModel.motions.adultNod3,
+          expression: ShizukuModel.expressions.smile5
         }),
       ],
     }));
@@ -81,8 +81,8 @@ export class JikanGreeting implements IGreetings {
       modelMotion: [
         new ModelMotion({
           character: ShizukuModel.character,
-          motion: ShizukuModel.motions.coolTilthead2,
-          expression: ShizukuModel.expressions.smile1
+          motion: ShizukuModel.motions.adultBlushed3,
+          expression: ShizukuModel.expressions.sparkling1
         }),
       ],
       modalContent: [

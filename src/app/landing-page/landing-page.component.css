@@ -22,6 +22,9 @@
   height: 99.5%;
   object-fit: fill
 }
+#loginPage {
+  cursor: pointer;
+}
 
 .fade-in { animation: fadeIn 2s; }
 .fade-out { animation: fadeOut 2s; }

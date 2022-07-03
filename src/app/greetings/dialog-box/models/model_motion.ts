@@ -22,6 +22,10 @@ export class ModelMotion {
     return this._triggeredText != null;
   }
 
+  public get characterIndex() : number {
+    return this._index;
+  }
+
   public get triggeredText() : string {
     return this._triggeredText;
   }

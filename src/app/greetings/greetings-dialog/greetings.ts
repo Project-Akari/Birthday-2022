@@ -1,6 +1,13 @@
 import { DialogModel } from "../dialog-box/models/dialog";
+import { EmmaKunGreeting } from "./emma-kun";
 import { IntroGreeting } from "./intro";
 import { JikanGreeting } from "./jikan";
+import { JuicyGreeting } from "./juicy";
+import { DoruGreeting } from "./doru";
+import { ShamGreeting } from "./sham";
+import { SkyGreeting } from "./sky";
+import { BeneGreeting } from "./bene";
+import { AsraGreeting } from "./asra";
 
 export interface IGreetings {
   greetingId: string;
@@ -10,7 +17,14 @@ export interface IGreetings {
 export class Greetings {
   private static _greetings: IGreetings[] = [
     new IntroGreeting(),
-    new JikanGreeting()
+    new JikanGreeting(),
+    new EmmaKunGreeting(),
+    new JuicyGreeting(),
+    new DoruGreeting(),
+    new ShamGreeting(),
+    new SkyGreeting(),
+    new BeneGreeting(),
+    new AsraGreeting()
   ];
 
   public static getGreeting(greetingId: string): IGreetings {

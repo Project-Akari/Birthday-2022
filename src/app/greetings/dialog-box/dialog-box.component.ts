@@ -89,6 +89,7 @@ export class DialogBoxComponent implements OnInit, OnChanges {
           if (this.dialog) this.startDialog();
         }
         else {
+          this.dialog.currentDialog = "";
           this.router.navigate(['/characters']);
         }
       }
