@@ -39,3 +39,8 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+.form-check-input:checked {
+  background-color: #00ccbb;
+  border-color: #00ccbb;
+}

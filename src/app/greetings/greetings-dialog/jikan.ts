@@ -77,7 +77,7 @@ export class JikanGreeting implements IGreetings {
       page: 3,
       characterName: ShizukuModel.portName,
       dialog: ` Enjoy your day and always take care of yourself <3 I love you! And always know you have me
-        and Port Café always. *Shows you a picture of both you and song*`,
+        and Port Café always. *Shows you a picture of both of you together and a cover song*`,
       modelMotion: [
         new ModelMotion({
           character: ShizukuModel.character,

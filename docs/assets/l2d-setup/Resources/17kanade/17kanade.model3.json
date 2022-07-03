@@ -20,6 +20,34 @@
           "FadeInTime": 0.5,
           "FadeOutTime": 0.5
         }
+      ],
+      "w-normal-nod05": [
+        {
+          "File": "motions/w-normal-nod05.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_normal_02": [
+        {
+          "File": "motions/face_normal_02.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "w-cute-glad05": [
+        {
+          "File": "motions/w-cute-glad05.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
+      ],
+      "face_smile_05": [
+        {
+          "File": "motions/face_smile_05.motion3.json",
+          "FadeInTime": 0.5,
+          "FadeOutTime": 0.5
+        }
       ]
     }
   },

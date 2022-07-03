@@ -252,7 +252,7 @@ export class LAppLive2DManager {
     this._models = new csmVector<LAppModel>();
     this._sceneIndex = 0;
     // this.changeScene(this._sceneIndex);
-    this.loadModels();
+    // this.loadModels();
   }
 
   _viewMatrix: CubismMatrix44; // モデル描画に用いるview行列
