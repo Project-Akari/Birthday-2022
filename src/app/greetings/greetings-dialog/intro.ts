@@ -32,6 +32,7 @@ export class IntroGreeting implements IGreetings {
       page: 1,
       characterName: "Everyone",
       dialog: `Happy Birthday Akari!!!`,
+      changeModels: [EnaModel.character, LukaModel.character, MafuyuModel.character],
       modelMotion: [
         new ModelMotion({
           index: 0,

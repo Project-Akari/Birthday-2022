@@ -1,4 +1,4 @@
-<div class="characters-body virtual-singer">
+<div class="characters-body" style="background-image: url('{{selectedGroup.bgImgUrl}}'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5))">
   <div class="overlay"></div>
   <div class="header">
     <div class="header-title">
@@ -7,56 +7,17 @@
   </div>
   <div class="group-logo">
     <div class="row align-items-center">
-      <div class="col">
-        <img class="group-logo-img active" src="assets/img/group-logo/VirtualSinger.png" alt="Virtual Singer Logo">
-      </div>
-      <div class="col">
-        <img class="group-logo-img" src="assets/img/group-logo/LeoNeed.png" alt="Virtual Singer Logo">
-      </div>
-      <div class="col">
-        <img class="group-logo-img" src="assets/img/group-logo/MoreMoreJump.png" alt="Virtual Singer Logo">
-      </div>
-      <div class="col">
-        <img class="group-logo-img" src="assets/img/group-logo/VividSquad.png" alt="Virtual Singer Logo">
-      </div>
-      <div class="col">
-        <img class="group-logo-img" src="assets/img/group-logo/WxS.png" alt="Virtual Singer Logo">
-      </div>
-      <div class="col">
-        <img class="group-logo-img" src="assets/img/group-logo/N25.png" alt="Virtual Singer Logo">
+      <div class="col animate__animated animate__fadeInRight" *ngFor="let group of groups">
+        <img (click)="logoOnClick(group)" [ngClass]="group.getClass(selectedGroup.key)" [src]="group.imgUrl" alt="{{group.name}} Logo">
       </div>
     </div>
   </div>
   <div class="group-body">
-    <ul id="virtualSinger" [hidden]="false">
-      <li>
-        <img class="group-character" src="assets/img/characters/Jikan.png" alt="Jikan">
-      </li>
-    </ul>
-    <ul id="leoNeed" [hidden]="true">
-      <li>
-        <img class="group-character" src="assets/img/characters/EmmaKun.png" alt="Emma-Kun">
-      </li>
-    </ul>
-    <ul id="moreMoreJump" [hidden]="true">
-      <li>
-        <img class="group-character" src="assets/img/characters/Juicy.png" alt="Sham">
-      </li>
-    </ul>
-    <ul id="vividSquad" [hidden]="true">
-      <li>
-        <img class="group-character" src="assets/img/characters/Doru.png" alt="Sham">
-      </li>
-      <li>
-        <img class="group-character" src="assets/img/characters/Sham.png" alt="Sham">
-      </li>
-      <li>
-        <img class="group-character" src="assets/img/characters/Sky.png" alt="Sham">
-      </li>
-    </ul>
-    <ul id="n25" [hidden]="true">
-      <li>
-        <img class="group-character" src="assets/img/characters/Asra.png" alt="Sham">
+    <ul>
+      <li class="animate__animated animate__zoomIn"
+        *ngFor="let member of selectedGroup.members"
+        [routerLink]="['/greetings']" [queryParams]="{greetedby: member.greetingId}">
+        <img class="group-character" [src]="member.imgUrl" [alt]="member.portName">
       </li>
     </ul>
   </div>

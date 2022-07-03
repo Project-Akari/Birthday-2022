@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { DialogModel } from './models/dialog';
 import { LAppDelegate } from '@l2d-setup/lappdelegate';
 import { IGreetings } from '../greetings-dialog/greetings';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog-box',
@@ -19,7 +20,7 @@ export class DialogBoxComponent implements OnInit, OnChanges {
 
   @Input() greeting: IGreetings;
   @Input() modelLoaded: number;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.dialog && this.dialog.hasChangeModels) {
@@ -86,6 +87,9 @@ export class DialogBoxComponent implements OnInit, OnChanges {
           this.dialog = this.greeting.getDialog(this._page++);
           this.dialog.updateModels();
           if (this.dialog) this.startDialog();
+        }
+        else {
+          this.router.navigate(['/characters']);
         }
       }
     }

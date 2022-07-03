@@ -7,6 +7,10 @@
   z-index: 3;
 }
 
+div {
+  box-sizing: unset !important;
+}
+
 .dialog-container {
   position: relative;
   width: 100%;

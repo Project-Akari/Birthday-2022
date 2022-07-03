@@ -20,9 +20,17 @@ export class GreetingsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routh.queryParams.subscribe((params: any) => {
+      this._initlAppDelegate();
       this.greeting = Greetings.getGreeting(params.greetedby);
+      this.greeting.getDialog(1).updateModels();
     });
+  }
 
+  ngOnDestroy(): void {
+    LAppDelegate.releaseInstance();
+  }
+
+  private _initlAppDelegate(): void {
     const lAppDelegate = LAppDelegate.getInstance();
     lAppDelegate.eventListener((event: L2dDefine.L2dEvents) => {
       switch (event) {
@@ -31,6 +39,7 @@ export class GreetingsComponent implements OnInit, OnDestroy {
             setTimeout(() => {
               this.isModelLoaded = true;
               this.showDialogBox = true;
+              this.greeting.getDialog(1).runMotion();
             }, 200);
           }
           ++this.modelLoadedCount;
@@ -51,10 +60,6 @@ export class GreetingsComponent implements OnInit, OnDestroy {
       return;
     }
     lAppDelegate.run();
-  }
-
-  ngOnDestroy(): void {
-    LAppDelegate.releaseInstance();
   }
 
 }

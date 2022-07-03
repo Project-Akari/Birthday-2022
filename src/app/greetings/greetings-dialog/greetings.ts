@@ -1,5 +1,6 @@
 import { DialogModel } from "../dialog-box/models/dialog";
 import { IntroGreeting } from "./intro";
+import { JikanGreeting } from "./jikan";
 
 export interface IGreetings {
   greetingId: string;
@@ -7,7 +8,10 @@ export interface IGreetings {
   getDialog(page: number): DialogModel;
 }
 export class Greetings {
-  private static _greetings: IGreetings[] = [new IntroGreeting()]
+  private static _greetings: IGreetings[] = [
+    new IntroGreeting(),
+    new JikanGreeting()
+  ];
 
   public static getGreeting(greetingId: string): IGreetings {
     const greetings = this._greetings.filter(f => f.greetingId == greetingId);

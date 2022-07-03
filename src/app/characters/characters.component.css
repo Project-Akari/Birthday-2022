@@ -7,10 +7,6 @@
   background-blend-mode: overlay;
 }
 
-.characters-body.virtual-singer {
-  background-image: url('../../assets/img/background/virtual-singer.png'), linear-gradient(rgba(0, 0, 0, 0.1),rgba(0,0,0,0.1));
-}
-
 .header {
   position: relative;;
   background: linear-gradient(to right, #00ffdd 0%, rgba(255, 255, 255, 0) 120%);
@@ -26,7 +22,7 @@
   left: 44%;
   font-size: 35px;
   font-weight: bold;
-  color: black;
+  color: #444466;
 }
 
 .group-logo {
