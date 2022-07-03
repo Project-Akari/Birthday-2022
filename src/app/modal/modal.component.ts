@@ -9,11 +9,12 @@ import { ModalContent } from '../greetings/dialog-box/models/modal_content';
 export class ModalComponent implements OnInit, OnChanges {
   public hasModalContents: boolean = false;
   public hidePrevBtn: boolean = true;
-  public hideNextBtn: boolean = false;
+  public hideNextBtn: boolean = true;
   public title: string = "";
   private _elements: HTMLElement[] = []
   private _currentIndex: number = 0;
 
+  @Input() menuTitle: string;
   @Input() modalContents: ModalContent[] = []
   @Input() onPrev: () => void;
   @Input() onNext: () => void;
@@ -21,16 +22,24 @@ export class ModalComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-    this.hasModalContents = true;
-    console.log('onInit = ' + this.modalContents.length)
-    this._renderContents();
+    this.hasModalContents = this.modalContents.length > 0;
+    if (this.hasModalContents) {
+      this._renderContents();
+    }
+    else {
+      this.title = this.menuTitle;
+      const modalContainer = document.getElementById('modalContainerId');
+      const modalBtn = document.getElementById('closeBtn');
+      modalContainer.style.height = '23%';
+      modalContainer.style.width = '30%';
+      modalBtn.style.left = '37%';
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['modalContents'].currentValue.length != this.modalContents.length) {
+    if (changes['modalContents'] && changes['modalContents'].currentValue.length != this.modalContents.length) {
       this.modalContents = changes['modalContents'].currentValue;
       this.hasModalContents = true;
-      console.log('onChanges = ' + this.modalContents.length)
       this._renderContents();
     }
   }

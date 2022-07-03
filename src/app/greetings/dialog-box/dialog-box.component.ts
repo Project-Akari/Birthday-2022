@@ -1,8 +1,9 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DialogModel } from './models/dialog';
 import { LAppDelegate } from '@l2d-setup/lappdelegate';
 import { IGreetings } from '../greetings-dialog/greetings';
 import { Router } from '@angular/router';
+import { ProjectAkariSettings } from 'src/app/landing-page/models/settings';
 
 @Component({
   selector: 'app-dialog-box',
@@ -20,6 +21,7 @@ export class DialogBoxComponent implements OnInit, OnChanges {
 
   @Input() greeting: IGreetings;
   @Input() modelLoaded: number;
+  @Output() onExit = new EventEmitter();
   constructor(private router: Router) { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -90,7 +92,11 @@ export class DialogBoxComponent implements OnInit, OnChanges {
         }
         else {
           this.dialog.currentDialog = "";
-          this.router.navigate(['/characters']);
+          this.onExit.emit();
+          if (!ProjectAkariSettings.isIntroSkipped()) ProjectAkariSettings.toggleIntro();
+          setTimeout(() => {
+            this.router.navigate(['/characters']);
+          }, 500);
         }
       }
     }

@@ -11,6 +11,7 @@ import { ModalComponent } from './modal/modal.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CharactersComponent } from './characters/characters.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CharactersComponent } from './characters/characters.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable

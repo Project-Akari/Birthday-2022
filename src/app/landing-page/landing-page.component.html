@@ -4,7 +4,12 @@
 <div id="projectAkariLogo" *ngIf="projectAkari" class="center-content max-height fade-in">
   <img src="assets/logo/project_akari.png" class="project-akari-logo" alt="">
 </div>
-<div id="loginPage" [routerLink]="['/greetings']" [queryParams]="{greetedby: 'intro'}" *ngIf="loginPage" class="max-height fade-in">
+<div (click)="showModal()" *ngIf="loginPage" class="option-btn">
+  <div class="option-btn-line"></div>
+  <div class="option-btn-line"></div>
+  <div class="option-btn-line"></div>
+</div>
+<div id="loginPage" *ngIf="loginPage" (click)="onLogin()" class="max-height fade-in">
   <img src="assets/logo/project_akari.png" class="project-akari-img" alt="">
   <audio [autoplay]="true" loop>
     <source src="assets/sound/bgm/LoginBGM.mp3" type="audio/mpeg" />
@@ -15,3 +20,14 @@
     Your browser does not support the video tag.
   </video>
 </div>
+<app-modal
+  [hidden]="!isModalShown"
+  [menuTitle]="'Settings'"
+  (onClose)="onModalClose()">
+  <div class="center-content">
+    <div class="form-check form-switch" style="color: black; margin-top: 20px;">
+      <input [(ngModel)]="isIntroSkipped" (click)="toggleSkipIntro()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
+      <label class="form-check-label" for="flexSwitchCheckChecked">Skip Introduction</label>
+    </div>
+  </div>
+</app-modal>

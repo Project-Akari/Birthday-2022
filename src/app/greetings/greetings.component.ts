@@ -31,6 +31,10 @@ export class GreetingsComponent implements OnInit, OnDestroy {
     LAppDelegate.releaseInstance();
   }
 
+  public onExit(): void {
+    this.isModelLoaded = false;
+  }
+
   private _initlAppDelegate(): void {
     const lAppDelegate = LAppDelegate.getInstance();
     lAppDelegate.eventListener((event: L2dDefine.L2dEvents) => {

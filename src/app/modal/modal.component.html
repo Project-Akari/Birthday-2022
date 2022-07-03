@@ -9,10 +9,9 @@
       <div [hidden]="hidePrevBtn" class="menu-model-arrow left" (click)="modalOnPrev()"></div>
       <ng-content *ngIf="!hasModalContents"></ng-content>
       <div id="modalContentElem" *ngIf="hasModalContents" class="app-modal-contents">
-
       </div>
       <div [hidden]="hideNextBtn" class="menu-model-arrow right" (click)="modalOnNext()"></div>
     </div>
-    <div class="menu-model-btn" (click)="modalOnClose()">Close</div>
+    <div id="closeBtn" class="menu-model-btn" (click)="modalOnClose()">Close</div>
   </div>
 </div>

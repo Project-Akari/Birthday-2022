@@ -1,4 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProjectAkariSettings } from './models/settings';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,17 +11,34 @@ export class LandingPageComponent implements AfterViewInit {
   portCafe = true;
   projectAkari = false;
   loginPage = false;
+  isIntroSkipped = false;
+  isModalShown = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngAfterViewInit(): void {
     this._initLogos();
   }
 
   ngOnInit(): void {
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      console.log('controller changed');
-  })
+    this.isIntroSkipped = ProjectAkariSettings.isIntroSkipped();
+  }
+
+  public toggleSkipIntro(): void {
+    this.isIntroSkipped = ProjectAkariSettings.toggleIntro();
+  }
+
+  public showModal(): void {
+    this.isModalShown = true;
+  }
+
+  public onModalClose(): void {
+    this.isModalShown = false;
+  }
+
+  public onLogin(): void {
+    if (this.isIntroSkipped) this.router.navigate(['/characters'])
+    else  this.router.navigateByUrl('greetings?greetedby=intro');
   }
 
   private _initLogos(): void {
