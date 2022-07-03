@@ -1,0 +1,77 @@
+.characters-body {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.characters-body.virtual-singer {
+  background-image: url('../../assets/img/background/virtual-singer.png'), linear-gradient(rgba(0, 0, 0, 0.1),rgba(0,0,0,0.1));
+}
+
+.header {
+  position: relative;;
+  background: linear-gradient(to right, #00ffdd 0%, rgba(255, 255, 255, 0) 120%);
+  height: 80px;;
+  width: 100%;;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.header-title {
+  position: absolute;
+  left: 44%;
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+}
+
+.group-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.group-logo-img {
+  cursor: pointer;
+  width: 150px;
+  opacity: .3;
+}
+
+.group-logo-img.active {
+  opacity: 1;
+}
+
+.group-body {
+  padding: 20px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-body ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.group-body li {
+  float: left;
+  padding: 20px 10px;
+}
+
+.group-character {
+  cursor: pointer;
+  height: 402px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+}

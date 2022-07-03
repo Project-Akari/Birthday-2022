@@ -10,6 +10,7 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
 import { ModalComponent } from './modal/modal.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CharactersComponent } from './characters/characters.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { environment } from '../environments/environment';
     GreetingsComponent,
     DialogBoxComponent,
     LoadingScreenComponent,
-    ModalComponent
+    ModalComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,

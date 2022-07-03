@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build --output-path=docs --base-href=/Akari-Birthday-202/",
+    "build": "ng build --output-path=docs --base-href=/Akari-Birthday-2022/",
     "buildDebug": "ng build --output-path=dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

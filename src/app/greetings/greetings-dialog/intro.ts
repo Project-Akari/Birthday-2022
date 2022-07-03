@@ -568,7 +568,7 @@ export class IntroGreeting implements IGreetings {
     }));
     this.dialogs.push(new DialogModel({
       page: 30,
-      characterName: AkitoModel.portName,
+      characterName: TsukasaModel.portName,
       dialog: `"Happy birthday AKARIN!!! Hope na makuha mo lahat ng mga gusto mo sa buhay pati si SUI-CHAN XDDDD!
         and MBTC! Greet muna ngayon ha! bawi ako pag di na busy" - Pogi pero Gwapo (Bene)`,
       changeModels: [TsukasaModel.character],
