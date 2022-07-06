@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CharactersComponent } from './characters/characters.component';
 import { FormsModule } from '@angular/forms';
+import { AssetsLoaderComponent } from './assets-loader/assets-loader.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     DialogBoxComponent,
     LoadingScreenComponent,
     ModalComponent,
-    CharactersComponent
+    CharactersComponent,
+    AssetsLoaderComponent
   ],
   imports: [
     BrowserModule,

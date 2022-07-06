@@ -91,13 +91,13 @@ div {
 }
 
 .menu-model-arrow.left {
-  animation: moveLeft 1s infinite;
+  animation: arrowMoveLeft 1s infinite;
   top: 43%;
   left: 5px;
 }
 
 .menu-model-arrow.right {
-  animation: moveRight 1s infinite;
+  animation: arrowMoveRight 1s infinite;
   top: 43%;
   right: 5px;
 }
@@ -119,16 +119,4 @@ div {
   border: 1px solid #676688;
   border-bottom: 2px solid #676688;
   background-color: white;
-}
-
-@keyframes moveLeft {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes moveRight {
-  0% { transform: translateX(0) rotate(180deg); }
-  50% { transform: translateX(5px) rotate(180deg); }
-  100% { transform: translateX(0) rotate(180deg); }
 }
