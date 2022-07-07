@@ -2,7 +2,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: #DDDDDD;
+  background: linear-gradient(to left, #DDDDDD 50%, #f1f1f1 50%);
 }
 
 .bottom-box {
@@ -14,17 +14,28 @@
   width: 102%;
   background-color: white;
   transform: rotate(0.49turn);
-  opacity: .8;
+  opacity: .9;
   margin-bottom: -40px;;
 }
 
 .bottom-box.back {
-  background-color: #5154F2;
+  background-color: #2f32c9;
   z-index: 0;
   opacity: 0.8;
   bottom: 55px;
-  transform: rotate(0.52turn);
+  transform: rotate(0.02turn);
   margin-left: -20px;
+}
+
+.group-messange {
+  position: absolute;
+  top: 15%;
+  left: 7%;
+  width: 35%;
+  font-size: 30px;
+  font-weight: bold;
+  transform: rotate(0.98turn);
+  color: white;
 }
 
 .group-logo {
@@ -89,4 +100,13 @@
   border: 3px solid white;
   border-radius: 25px;
   margin-bottom: 10px;;
+}
+
+.group-members {
+  background: url('../../assets/img/background/LeoNeedGroup.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
