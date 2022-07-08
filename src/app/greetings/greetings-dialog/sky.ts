@@ -80,9 +80,10 @@ export class SkyGreeting implements IGreetings {
           title: 'Sky',
           isPortrait: false,
           isEmbed: true,
-          link: 'https://drive.google.com/file/d/15mwpgUyylwdwtIpixTsooU7bKiKvXJ6x/preview'
+          link: 'https://www.youtube.com/embed/EK1tzFAiBuc'
         })
       ]
+      // https://drive.google.com/file/d/15mwpgUyylwdwtIpixTsooU7bKiKvXJ6x/preview
     }));
   }
 }

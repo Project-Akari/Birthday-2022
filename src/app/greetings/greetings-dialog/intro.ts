@@ -473,7 +473,7 @@ export class IntroGreeting implements IGreetings {
           title: 'Sky',
           isPortrait: false,
           isEmbed: true,
-          link: 'https://drive.google.com/file/d/15mwpgUyylwdwtIpixTsooU7bKiKvXJ6x/preview'
+          link: 'https://www.youtube.com/embed/EK1tzFAiBuc'
         })
       ]
     }));
@@ -543,7 +543,7 @@ export class IntroGreeting implements IGreetings {
           title: 'Jikan',
           isPortrait: false,
           isEmbed: true,
-          link: 'https://drive.google.com/file/d/1-H6liL_fORi_ZxZ0NT9IqpFv7ZcOGvRk/preview'
+          link: 'https://www.youtube.com/embed/Fn-Y7Pl61Uw'
         })
       ]
     }));
