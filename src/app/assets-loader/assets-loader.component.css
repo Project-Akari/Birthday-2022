@@ -10,24 +10,23 @@
   bottom: 0;
   left: 0;
   z-index: 1;
-  height: 28%;
+  height: 29%;
   width: 102%;
   background-color: white;
   transform: rotate(0.49turn);
-  opacity: .9;
-  margin-bottom: -40px;;
+  margin-bottom: -45px;;
 }
 
 .bottom-box.back {
   background-color: #2f32c9;
   z-index: 0;
-  opacity: 0.8;
+  opacity: 0.9;
   bottom: 55px;
   transform: rotate(0.02turn);
   margin-left: -20px;
 }
 
-.group-messange {
+.group-message {
   position: absolute;
   top: 15%;
   left: 7%;

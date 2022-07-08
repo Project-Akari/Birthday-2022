@@ -10,5 +10,6 @@ export class AssetsLoaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 }
