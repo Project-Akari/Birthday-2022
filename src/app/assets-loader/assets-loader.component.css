@@ -2,7 +2,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to left, #DDDDDD 50%, #f1f1f1 50%);
+  background-color: #f1f1f1;
 }
 
 .bottom-box {
@@ -10,7 +10,7 @@
   bottom: 0;
   left: 0;
   z-index: 1;
-  height: 29%;
+  height: 31%;
   width: 102%;
   background-color: white;
   transform: rotate(0.49turn);
@@ -18,7 +18,7 @@
 }
 
 .bottom-box.back {
-  background-color: #2f32c9;
+  transition: background-color 1s;
   z-index: 0;
   opacity: 0.9;
   bottom: 55px;
@@ -30,17 +30,35 @@
   position: absolute;
   top: 15%;
   left: 7%;
-  width: 35%;
+  width: 36%;
   font-size: 30px;
   font-weight: bold;
   transform: rotate(0.98turn);
   color: white;
 }
 
+.group-message.mmj {
+  top: 11%;
+  left: 4%;
+  width: 41%;
+}
+
+.group-message.wxs {
+  top: 9%;
+  left: 4%;
+  width: 39%
+}
+
+.group-message.virtual {
+  top: 14%;
+  left: 6%;
+  width: 40%;
+}
+
 .group-logo {
   position: fixed;
   z-index: 2;
-  bottom: 3%;
+  bottom: -0.2%;
   right: 6%;
   height: 23%;
   width: 27%;
@@ -99,6 +117,15 @@
   border: 3px solid white;
   border-radius: 25px;
   margin-bottom: 10px;;
+}
+
+.loading-bar-progress {
+  width: 0%;
+  height: 8px;
+  margin-left: 4px;
+  margin-top: 3px;
+  background-color: #01CCBF;
+  border-radius: 25px;
 }
 
 .group-members {

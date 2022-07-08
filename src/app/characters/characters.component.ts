@@ -8,6 +8,7 @@ import { GroupsKey, SekaiGroup, SekaiGroups } from './model/groups';
 export class CharactersComponent implements OnInit {
   groups: SekaiGroup[] = SekaiGroups.groups;
   selectedGroup: SekaiGroup;
+  isAssetsLoaded: boolean = false;
 
   constructor() { }
 
@@ -17,5 +18,9 @@ export class CharactersComponent implements OnInit {
 
   logoOnClick(group: SekaiGroup): void {
     this.selectedGroup = group;
+  }
+
+  onAssetsLoaded(): void {
+    this.isAssetsLoaded = true;
   }
 }

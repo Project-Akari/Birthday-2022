@@ -15,15 +15,15 @@ export class GreetingsComponent implements OnInit, OnDestroy {
   modelLoadedCount = 0;
   greeting: IGreetings;
   _isDialogShown = false;
+  isIntro = false;
   constructor(private routh: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.routh.queryParams.subscribe((params: any) => {
-      this._initlAppDelegate();
-      this.greeting = Greetings.getGreeting(params.greetedby);
-      this.greeting.getDialog(1).updateModels();
+      this.isIntro = params.greetedby == 'intro'
+      if (!this.isIntro) this.onAssetsLoaded();
     });
   }
 
@@ -35,14 +35,22 @@ export class GreetingsComponent implements OnInit, OnDestroy {
     this.isModelLoaded = false;
   }
 
+  public onAssetsLoaded(): void {
+    this.routh.queryParams.subscribe((params: any) => {
+      this._initlAppDelegate();
+      this.greeting = Greetings.getGreeting(params.greetedby);
+      this.greeting.getDialog(1).updateModels();
+    });
+  }
+
   private _initlAppDelegate(): void {
     const lAppDelegate = LAppDelegate.getInstance();
     lAppDelegate.eventListener((event: L2dDefine.L2dEvents) => {
       switch (event) {
         case L2dDefine.L2dEvents.ModelLoaded:
           if (!this._isDialogShown) {
+            this.isModelLoaded = true;
             setTimeout(() => {
-              this.isModelLoaded = true;
               this.showDialogBox = true;
               this._isDialogShown = true;
               this.greeting.getDialog(1).runMotion();

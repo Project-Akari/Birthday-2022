@@ -33,7 +33,6 @@
               "src/assets/cubism/Core/live2dcubismcore.js",
               "src/assets/vendor/PxLoader/PxLoader.js",
               "src/assets/vendor/PxLoader/PxLoaderImage.js",
-              "src/assets/vendor/PxLoader/PxLoaderSound.js",
               "src/assets/vendor/PxLoader/PxLoaderVideo.js"
             ],
             "serviceWorker": true,

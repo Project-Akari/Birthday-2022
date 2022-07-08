@@ -245,7 +245,7 @@ export class IntroGreeting implements IGreetings {
       page: 10,
       characterName: LukaModel.characterName,
       dialog: `Since everyone is here, why don't we read our greetings to
-        Akari? then I will start first.`,
+        Akari? then, I will start first.`,
       changeModels: [LukaModel.character],
       modelMotion: [
         new ModelMotion({

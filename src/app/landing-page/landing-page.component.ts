@@ -8,20 +8,26 @@ import { ProjectAkariSettings } from './models/settings';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements AfterViewInit {
-  portCafe = true;
+  portCafe = false;
   projectAkari = false;
   loginPage = false;
   isIntroSkipped = false;
   isModalShown = false;
+  isAssetsLoaderShown = true;
 
   constructor(private router: Router) { }
 
   ngAfterViewInit(): void {
-    this._initLogos();
   }
 
   ngOnInit(): void {
     this.isIntroSkipped = ProjectAkariSettings.isIntroSkipped();
+  }
+
+  public onAssetsLoaded(): void {
+    this.isAssetsLoaderShown = false;
+    this.portCafe = true;
+    this._initLogos();
   }
 
   public toggleSkipIntro(): void {

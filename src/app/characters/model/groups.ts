@@ -1,3 +1,4 @@
+import { AryaGreeting } from "src/app/greetings/greetings-dialog/arya";
 import { AsraGreeting } from "src/app/greetings/greetings-dialog/asra";
 import { BeneGreeting } from "src/app/greetings/greetings-dialog/bene";
 import { DoruGreeting } from "src/app/greetings/greetings-dialog/doru";
@@ -76,9 +77,9 @@ export class SekaiGroups {
     members: [
       new GroupMember({
         group: GroupsKey.virtualSinger,
-        greetingId: JikanGreeting.greetingId,
-        portName: 'Jikan',
-        imgUrl: 'assets/img/characters/Jikan.png'
+        greetingId: AryaGreeting.greetingId,
+        portName: 'Arya',
+        imgUrl: 'assets/img/characters/Arya.png'
       })
     ]
   });

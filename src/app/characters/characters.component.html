@@ -1,4 +1,4 @@
-<div class="characters-body" style="background-image: url('{{selectedGroup.bgImgUrl}}'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5))">
+<div *ngIf="isAssetsLoaded" class="characters-body" style="background-image: url('{{selectedGroup.bgImgUrl}}'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5))">
   <div class="overlay"></div>
   <div class="header">
     <div class="header-title">
@@ -22,3 +22,5 @@
     </ul>
   </div>
 </div>
+
+<app-assets-loader *ngIf="!isAssetsLoaded" [loadCharacters]="true" (onCompleted)="onAssetsLoaded()"></app-assets-loader>

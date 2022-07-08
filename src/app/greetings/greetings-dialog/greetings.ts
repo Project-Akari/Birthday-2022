@@ -8,6 +8,7 @@ import { ShamGreeting } from "./sham";
 import { SkyGreeting } from "./sky";
 import { BeneGreeting } from "./bene";
 import { AsraGreeting } from "./asra";
+import { AryaGreeting } from "./arya";
 
 export interface IGreetings {
   greetingId: string;
@@ -24,7 +25,8 @@ export class Greetings {
     new ShamGreeting(),
     new SkyGreeting(),
     new BeneGreeting(),
-    new AsraGreeting()
+    new AsraGreeting(),
+    new AryaGreeting()
   ];
 
   public static getGreeting(greetingId: string): IGreetings {

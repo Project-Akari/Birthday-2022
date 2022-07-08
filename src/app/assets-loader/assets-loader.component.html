@@ -1,22 +1,44 @@
 
-<div class="group-members">
+<div *ngIf="!showLoadingScreen" id="carouselGroup" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/background/VirtualSingerGroup.png" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/background/LeoNeedGroup.png" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/background/MoreMoreJumpGroup.png" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/background/VividSquadGroup.png" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/background/WxSGroup.png" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/background/N25Group.png" class="d-block w-100">
+    </div>
+  </div>
   <div class="group-logo">
-    <img src="assets/img/group-logo/LeoNeed.png" alt="">
+    <img [src]="group.logoUrl">
   </div>
   <div class="btn-container left">
-    <img src="assets/img/component/Arrow.png" alt="">
+    <img (click)="onPrev()" src="assets/img/component/Arrow.png" alt="">
   </div>
   <div class="btn-container right">
-    <img src="assets/img/component/Arrow.png" alt="">
+    <img (click)="onNext()" src="assets/img/component/Arrow.png" alt="">
   </div>
   <div class="loading-bar-container">
     <h3>Now Loading...</h3>
-    <div class="loading-bar"></div>
+    <div class="loading-bar">
+      <div id="loadingbarprog" class="loading-bar-progress" [style]="{'width:': (progress + '%')}"></div>
+    </div>
     <p>*Please check your signal strength before download. Weak signal strength may result in longer download times.</p>
   </div>
   <div class="bottom-box"></div>
-  <div class="bottom-box back">
-    <p class="group-message">Four childhood friends overcome their defferences to form a band</p>
+  <div class="bottom-box back" [style]="{'background-color': group.color}">
+    <p id="groupMessageId" class="group-message virtual" [style]="{'color': group.textColor}">{{group.groupMessage}}</p>
   </div>
 </div>
 <app-loading-screen *ngIf="showLoadingScreen"></app-loading-screen>

@@ -6,6 +6,8 @@
   [modelLoaded]="modelLoadedCount"
   (onExit)="onExit()">
 </app-dialog-box>
+
+<app-assets-loader *ngIf="!isModelLoaded && this.isIntro" [loadGreetings]="true" (onCompleted)="onAssetsLoaded()"></app-assets-loader>
 <app-loading-screen
-*ngIf="!isModelLoaded">
+*ngIf="!this.isIntro && !this.isModelLoaded">
 </app-loading-screen>
