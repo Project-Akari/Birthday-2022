@@ -7,6 +7,7 @@ import { JikanGreeting } from "src/app/greetings/greetings-dialog/jikan";
 import { JuicyGreeting } from "src/app/greetings/greetings-dialog/juicy";
 import { ShamGreeting } from "src/app/greetings/greetings-dialog/sham";
 import { SkyGreeting } from "src/app/greetings/greetings-dialog/sky";
+import { YuyanGreeting } from "src/app/greetings/greetings-dialog/yuyan";
 import { GroupMember } from "./member";
 
 export enum GroupsKey {
@@ -80,6 +81,12 @@ export class SekaiGroups {
         greetingId: AryaGreeting.greetingId,
         portName: 'Arya',
         imgUrl: 'assets/img/characters/Arya.png'
+      }),
+      new GroupMember({
+        group: GroupsKey.virtualSinger,
+        greetingId: YuyanGreeting.greetingId,
+        portName: 'Yuyan',
+        imgUrl: 'assets/img/characters/Yuyan.png'
       })
     ]
   });
