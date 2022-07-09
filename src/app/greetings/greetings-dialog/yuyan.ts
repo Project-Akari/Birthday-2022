@@ -23,6 +23,7 @@ export class YuyanGreeting implements IGreetings {
       dialog: `Happy Birthday Akariiiiiiiiin. Sana maging happy ang
         araw mo today at wag ka pa stress sa work. Abusuhin ang VL
         if ma pwede gashaahs chz`,
+      changeModels: [KaitoModel.character],
       modelMotion: [
         new ModelMotion({
           character: KaitoModel.character,
