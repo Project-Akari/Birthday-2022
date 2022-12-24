@@ -6,11 +6,11 @@
 }
 
 .bottom-box {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 1;
-  height: 31%;
+  height: 200px;
   width: 102%;
   background-color: white;
   transform: rotate(0.49turn);
@@ -21,9 +21,9 @@
   transition: background-color 1s;
   z-index: 0;
   opacity: 0.9;
-  bottom: 55px;
+  bottom: 38px;
   transform: rotate(0.02turn);
-  margin-left: -20px;
+  margin-left: -30px;
 }
 
 .group-message {
