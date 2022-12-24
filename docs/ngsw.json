@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1671890123721,
+  "timestamp": 1671890493724,
   "index": "/Akari-Birthday-2022/index.html",
   "assetGroups": [
     {
@@ -335,7 +335,7 @@
         "/Akari-Birthday-2022/assets/videos/login_video.mp4",
         "/Akari-Birthday-2022/favicon.ico",
         "/Akari-Birthday-2022/index.html",
-        "/Akari-Birthday-2022/main.4827a1c353fee4fb.js",
+        "/Akari-Birthday-2022/main.deaffd13cdfb79a3.js",
         "/Akari-Birthday-2022/manifest.webmanifest",
         "/Akari-Birthday-2022/polyfills.0a6885c086b0a8f7.js",
         "/Akari-Birthday-2022/runtime.c8feddb15238c951.js",
@@ -670,8 +670,8 @@
     "/Akari-Birthday-2022/assets/vendor/PxLoader/dist/pxloader-images.min.js": "09b71b73afa4798f970881be665bf050bb20276b",
     "/Akari-Birthday-2022/assets/videos/login_video.mp4": "cde32405c0d415410f5791481abc754fc7f9303c",
     "/Akari-Birthday-2022/favicon.ico": "3c8e58c9fcb05ee11ff43a0791c44d0c09ad37ef",
-    "/Akari-Birthday-2022/index.html": "19ca863074b2cbffff68102f7d56044ef82c6233",
-    "/Akari-Birthday-2022/main.4827a1c353fee4fb.js": "09a0c7d866aefd4fa9b1796460a1ce1af117d5d2",
+    "/Akari-Birthday-2022/index.html": "8a7c7e6047a3bf3a3111e2ca8837f5a50e5a8354",
+    "/Akari-Birthday-2022/main.deaffd13cdfb79a3.js": "c9792f8e329ed863eedd82a2b4a6879f36693569",
     "/Akari-Birthday-2022/manifest.webmanifest": "d0e94489d31cd55f2f2da9c28e69a62fb41021b2",
     "/Akari-Birthday-2022/polyfills.0a6885c086b0a8f7.js": "fe3113bd737704062dac46e00dba9eeed83cb2b8",
     "/Akari-Birthday-2022/runtime.c8feddb15238c951.js": "758f7eeccaba7922ce3d5394698546c2f21a3826",
